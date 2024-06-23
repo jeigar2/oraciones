@@ -1,0 +1,232 @@
+<html>
+  <head>
+    <title>Letanias lauretanas</title>
+    <style>
+      /* Estilos para el texto normal */
+      p {
+        font-size: 24px;
+        color: #000;
+        margin-block: 6px;
+
+      }
+      
+      /* Estilos para el texto cuando se pasa con el ratón */
+      p:hover {
+        background-color: #0000ff; /* Azul */
+        color: #fff; /* Blanco */
+        /*font-size: 28px; /* Aumenta el tamaño en 2 unidades */
+        /*font-weight: bold; /* Negrita */
+      }
+      #mensaje {
+        z-index: 1;
+        position: absolute;
+        top: 10px;
+        width: calc(20px + var(--right-width));
+        left: 900px;
+        color: rgb(4, 78, 236);
+        font-size: 28px;
+        font-weight: bold; 
+        border: 2pt solid #fff;
+        background-color: rgba(250, 235, 215, 0.863);
+        border-radius: 3px;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      .frase{
+        color: rgb(70, 236, 4);
+        font-size: 28px;
+        font-weight: bold; 
+      }
+
+      .respuesta {
+        color: rgb(236, 4, 4);
+        font-size: 28px;
+        font-weight: bolder;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 92vh;
+      }
+
+      .column {
+        width: 50%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        
+      }
+
+      .left {
+        background-color: #f0f0f0;
+        overflow-y: auto; /* Agregamos overflow-y: auto para habilitar el scroll vertical */
+      }
+
+      .right {
+        background-color: #ccc;
+      }
+
+      @media (max-width: 300px) {
+        .column {
+          flex-direction: column;
+        }
+        .left {
+          height: 70vh;
+        }
+        .right {
+          height: 30vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .column {
+            width: 100%;
+        }
+        .left {
+            margin-bottom: 20px;
+        }
+        .right {
+            margin-top: 20px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Letanias lauretanas</h1>
+    <div class="container">
+        <div class="column left">
+            <div>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Señor, ten piedad</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Cristo, ten piedad</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Señor, ten piedad.</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Cristo, óyenos.</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Cristo, escúchanos.</p>
+                <hr>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ten misericordia de nosotros')", onmouseout="ocultarTexto()">Dios, Padre celestial, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ten misericordia de nosotros')", onmouseout="ocultarTexto()">Dios, Hijo, Redentor del mundo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ten misericordia de nosotros')", onmouseout="ocultarTexto()">Dios, Espíritu Santo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ten misericordia de nosotros')", onmouseout="ocultarTexto()">Santísima Trinidad, un solo Dios,</p>
+                <hr>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Santa María, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Santa Madre de Dios,</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Santa Virgen de las Vírgenes,</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre de Cristo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre de la Iglesia, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre de la misericordia, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre de la divina gracia, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre de la esperanza, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre purísima, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre castísima, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre siempre virgen,</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre inmaculada, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre amable, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre admirable, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre del buen consejo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre del Creador, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre del Salvador, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Madre VEN, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen prudentísima, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen digna de veneración, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen digna de alabanza, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen poderosa, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen clemente, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Virgen fiel, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Espejo de justicia, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Trono de la sabiduría, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Causa de nuestra alegría, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Vaso espiritual, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Vaso digno de honor, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Vaso de insigne devoción, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Rosa mística, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Torre de David, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Torre de marfil, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Casa de oro, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Arca de la Alianza, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Puerta del cielo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Estrella de la mañana, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Salud de los enfermos, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Refugio de los pecadores, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Consuelo de los migrantes,</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Consoladora de los afligidos, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Auxilio de los cristianos, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Ángeles, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Patriarcas, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Profetas, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Apóstoles, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Mártires, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de los Confesores, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de las Vírgenes, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de todos los Santos, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina concebida sin pecado original, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina asunta a los Cielos, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina del Santísimo Rosario, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de DIOS ES AMOR, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de la familia, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ruega por nosotros')", onmouseout="ocultarTexto()">Reina de la paz.</p>
+                <hr>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'perdónanos, Señor')", onmouseout="ocultarTexto()">Cordero de Dios, que quitas el pecado del mundo, </p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'escúchanos, Señor')", onmouseout="ocultarTexto()">Cordero de Dios, que quitas el pecado del mundo,</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'ten misericordia de nosotros')", onmouseout="ocultarTexto()">Cordero de Dios, que quitas el pecado del mundo, </p>
+                <hr>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto(this, 'Para que seamos dignos de las promesas de Cristo')">Ruega por nosotros, Santa Madre de Dios. </p>
+
+                <h2>ORACIÓN</h2>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Te rogamos nos concedas, </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Señor Dios nuestro, </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">gozar de continua salud de alma y cuerpo, </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">y por la gloriosa intercesión </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">de la bienaventurada siempre Virgen María, </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">vernos libres de las tristezas de la vida presente </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">y disfrutar de las alegrías eternas. </p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Por Cristo nuestro Señor. </p>
+                <p onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Amén.</p>
+            </div>        
+        </div>
+        <div class="column right" style="--right-offset: 20px; --right-width: 20px;">
+            <div id="image-column">
+                <img src="https://www.madreven.es/wp-content/uploads/2021/05/Nueva-estampa-%C2%A1Madre-Ven.jpg" alt="Imagen" height="100%">
+            </div>        
+        </div>
+        <div draggable="true" id="mensaje">
+            Hola
+         </div>
+    </div>
+  </body>
+  <script>
+    var mensaje = window.document.getElementById("mensaje");
+    function mostrarTexto(obj, respuesta){
+        if(respuesta){
+            mensaje.innerHTML = "<span class='frase'>" + obj.textContent + "</span><br><span class='respuesta'>" + respuesta + ".<span>";
+        } else {
+            mensaje.textContent = obj.textContent;
+        }
+    }
+    function ocultarTexto(){
+        mensaje.textContent = "";
+    }
+    function ocultar(obj) {
+        obj.style.display = 'none'; // Ocultar el elemento
+    }
+/*
+    const text = document.getElementById('text');
+    const image = document.getElementById('image');
+
+    // Agregamos un listener para el resize de la ventana
+    window.addEventListener('resize', () => {
+    const width = window.innerWidth;
+    if (width <= 300) {
+        text.style.height = '30vh';
+        image.style.height = '70vh';
+    } else {
+        text.style.height = 'auto';
+        image.style.height = 'auto';
+    }
+    });
+*/
+  </script>
+</html>

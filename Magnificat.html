@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <title>Magnificat</title>
+    <style>
+      /* Estilos para el texto normal */
+      p {
+        font-size: 24px;
+        color: #000;
+        margin-block: 4px;
+      }
+      
+      /* Estilos para el texto cuando se pasa con el ratón */
+      p:hover {
+        background-color: #0000ff; /* Azul */
+        color: #fff; /* Blanco */
+        /*font-size: 28px; /* Aumenta el tamaño en 2 unidades */
+        /*font-weight: bold; /* Negrita */
+      }
+      #mensaje[draggable="true"] {
+        z-index: 1;
+        position: absolute;
+        top: calc(20px + var(--right-offset));
+        width: calc(20px + var(--right-width));
+        left: 500px;
+        color: rgb(4, 78, 236);
+        font-size: 28px;
+        font-weight: bold; 
+        border: 2pt solid #fff;
+        background-color: rgba(250, 235, 215, 0.466);
+        border-radius: 3px;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 92vh;
+      }
+
+      .column {
+        width: 50%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left {
+        background-color: #f0f0f0;
+      }
+
+      .right {
+        background-color: #ccc;
+      }
+
+      @media (max-width: 300px) {
+        .column {
+          flex-direction: column;
+        }
+        .left {
+          height: 70vh;
+        }
+        .right {
+          height: 30vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .column {
+            width: 100%;
+        }
+        .left {
+            margin-bottom: 20px;
+        }
+        .right {
+            margin-top: 20px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Magnificat</h1>
+    <div class="container">
+        <div class="column left">
+            <div>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Proclama mi alma, la grandeza del Señor.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Se alegra mi espíritu en Dios, mi salvador;</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">porque ha mirado la humillación de su esclava.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Desde ahora me felicitarán todas las generaciones,</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">porque el Poderoso ha hecho obras grandes por mí:</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">su nombre es santo, y su misericordia llega a sus fieles de generación en generación.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Él hace proezas con su brazo:</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">dispersa a los soberbios de corazón,</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">derriba del trono a los poderosos y enaltece a los humildes,</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">a los hambrientos los colma de bienes y a los ricos los despide vacíos.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Auxilia a Israel, su siervo, acordándose de la misericordia</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">–como lo había prometido a nuestros padres– en favor de Abrahán y su descendencia por siempre.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Gloria al Padre, y al Hijo, y al Espíritu Santo.</p>
+                <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Cómo era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
+            </div>        
+        </div>
+        <div class="column right" style="--right-offset: 20px; --right-width: 20px;">
+            <div id="image-column">
+                <img src="https://wp.es.aleteia.org/wp-content/uploads/sites/7/2017/07/10.jpg" alt="Imagen">
+            </div>        
+        </div>
+        <div draggable="true" id="mensaje">
+          Magnificat
+         </div>
+    </div>
+  </body>
+  <script>
+    var mensaje = window.document.getElementById("mensaje");
+    function mostrarTexto(obj){
+        mensaje.textContent = obj.textContent;
+    }
+    function ocultarTexto(){
+        mensaje.textContent = "";
+    }
+
+    const text = document.getElementById('text');
+    const image = document.getElementById('image');
+
+    // Agregamos un listener para el resize de la ventana
+    window.addEventListener('resize', () => {
+    const width = window.innerWidth;
+    if (width <= 300) {
+        text.style.height = '30vh';
+        image.style.height = '70vh';
+    } else {
+        text.style.height = 'auto';
+        image.style.height = 'auto';
+    }
+    });
+  </script>
+</html>

@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="2041px" preserveAspectRatio="none" style="width:703px;height:2041px;background:#FFFFFF;" version="1.1" viewBox="0 0 703 2041" width="703px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <rect fill="#FFFFFF" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="72" x="10" y="993.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="20" y="1016.3389">Santo</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="20" y="1032.6357">Rosario</text>
+
+
+        <rect fill="#90EE90" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="158" x="132" y="124.4453"/>
+        <text id="L" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="142" y="147.4404">Lunes</text>
+        <text id="LT" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="142" y="163.7373">(Misterios Gozosos)</text>
+        
+            <rect id="RL1" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="235" x="340" y="20"
+            onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#181818'; this.style.strokeWidth = '1.5'" onclick="addBalls();"/>
+            <text id="TL1" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="350" y="42.9951"
+            onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#000000'; this.style.strokeWidth = '1';">La Encarnación del Hijo de Dios</text>
+        
+        <path d="M290,150.7422 L300,150.7422 C315,150.7422 315,38.1484 330,38.1484 L340,38.1484 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        
+            <rect id="RL2" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="328" x="340" y="76.2969" onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#181818'; this.style.strokeWidth = '1.5'" onclick="addBalls();"/>
+            <text id="TL2" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="350" y="99.292">La Visitación de María a su prima Santa Isabel</text>
+
+<script>
+<!--
+  function addBalls() {
+    // Obtener el rectángulo y su posición
+    var rect = document.getElementById('RL2');
+    var x = parseInt(rect.getAttribute('x'));
+    var y = parseInt(rect.getAttribute('y'));
+
+    // Crear los elementos adicionales (bolas y texto)
+    for (var i = 1; i <= 10; i++) {
+      var ball = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      ball.setAttribute('cx', x + 16 + Math.random() * 256);
+      ball.setAttribute('cy', y + 16 + Math.random() * 256);
+      ball.setAttribute('r', 8);
+      ball.setAttribute('fill', 'none');
+      ball.setAttribute('stroke', '#181818');
+      ball.setAttribute('stroke-width', '1');
+
+      var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.textContent = i.toString();
+      text.setAttribute('x', x + 16 + Math.random() * 256);
+      text.setAttribute('y', y + 16 + Math.random() * 256);
+      text.setAttribute('font-size', '14');
+      text.setAttribute('font-family', 'sans-serif');
+      text.setAttribute('fill', '#181818');
+
+      // Agregar los elementos adicionales al documento
+      document.body.appendChild(ball);
+      document.body.appendChild(text);
+    }
+  }
+  -->
+</script>
+        
+        <path d="M290,150.7422 L300,150.7422 C315,150.7422 315,94.4453 330,94.4453 L340,94.4453 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        
+            <rect id="RL3" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="290" x="340" y="132.5938"
+            onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#181818'; this.style.strokeWidth = '1.5'" onclick="addBalls();"/>
+            <text id="TL3" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="270" x="350" y="155.5889">El Nacimiento del Hijo de Dios en Belén</text>
+        
+        <path d="M290,150.7422 L300,150.7422 C315,150.7422 315,150.7422 330,150.7422 L340,150.7422 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        
+            <rect id="RL4" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="283" x="340" y="188.8906"
+            onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#181818'; this.style.strokeWidth = '1.5'" onclick="addBalls();"/>
+            <text id="TL4" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="350" y="211.8857">La presentación de Jesús en el templo</text>
+        
+        <path d="M290,150.7422 L300,150.7422 C315,150.7422 315,207.0391 330,207.0391 L340,207.0391 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        
+            <rect id="RL5" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="282" x="340" y="245.1875"
+            onmouseover="this.style.stroke = '#00FF00'; this.style.strokeWidth = '3';" onmouseout="this.style.stroke = '#181818'; this.style.strokeWidth = '1.5'" onclick="addBalls();"/>
+            <text id="TL5" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="262" x="350" y="268.1826">El  Niño perdido y hallado en el templo</text>
+            
+        <path d="M290,150.7422 L300,150.7422 C315,150.7422 315,263.3359 330,263.3359 L340,263.3359 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,150.7422 122,150.7422 L132,150.7422 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#FFBBCC" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="167" x="132" y="405.9297"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="142" y="428.9248">Martes</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="142" y="445.2217">(Misterios Dolorosos)</text>
+        
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="181" x="349" y="301.4844"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="359" y="324.4795">La Oración en el Huerto</text>
+    
+        <path d="M299,432.2266 L309,432.2266 C324,432.2266 324,319.6328 339,319.6328 L349,319.6328 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+    
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="186" x="349" y="357.7813"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="359" y="380.7764">La Flagelación del Señor</text>
+    
+        <path d="M299,432.2266 L309,432.2266 C324,432.2266 324,375.9297 339,375.9297 L349,375.9297 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="198" x="349" y="414.0781"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="359" y="437.0732">La Coronación de Espinas</text>
+
+        <path d="M299,432.2266 L309,432.2266 C324,432.2266 324,432.2266 339,432.2266 L349,432.2266 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="207" x="349" y="470.375"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="359" y="493.3701">Jesús con la cruz a cuestas</text>
+
+        <path d="M299,432.2266 L309,432.2266 C324,432.2266 324,488.5234 339,488.5234 L349,488.5234 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="177" x="349" y="526.6719"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="359" y="549.667">Jesús muere en la cruz</text>
+
+        <path d="M299,432.2266 L309,432.2266 C324,432.2266 324,544.8203 339,544.8203 L349,544.8203 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,432.2266 122,432.2266 L132,432.2266 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#FFA500" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="161" x="132" y="695.5625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="142" y="718.5576">Miercoles</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="142" y="734.8545">(Misterios Gloriosos)</text>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="201" x="343" y="582.9688"/>       
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="353" y="605.9639">La Resurrección del Señor</text>
+
+        <path d="M293,721.8594 L303,721.8594 C318,721.8594 318,601.1172 333,601.1172 L343,601.1172 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="234" x="343" y="639.2656"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="353" y="662.2607">La Ascensión del Señor al Cielo</text>
+
+        <path d="M293,721.8594 L303,721.8594 C318,721.8594 318,657.4141 333,657.4141 L343,657.4141 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="348" x="343" y="695.5625"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="328" x="353" y="718.5576">La venida del Espíritu Santo sobre los apóstoles</text>
+
+        <path d="M293,721.8594 L303,721.8594 C318,721.8594 318,713.7109 333,713.7109 L343,713.7109 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="288" x="343" y="751.8594"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="353" y="774.8545">La Asunción de María Santísima al Cielo</text>
+
+        <path d="M293,721.8594 L303,721.8594 C318,721.8594 318,770.0078 333,770.0078 L343,770.0078 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="336" x="343" y="808.1563"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="353" y="831.1514">La Coronación de María Santísima como Reina</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="353" y="847.4482">y Señora de todo lo creado</text>
+
+        <path d="M293,721.8594 L303,721.8594 C318,721.8594 318,834.4531 333,834.4531 L343,834.4531 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,721.8594 122,721.8594 L132,721.8594 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#ADD8E6" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="171" x="132" y="993.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="142" y="1016.3389">Jueves</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="142" y="1032.6357">(Misterios Luminosos)</text>
+
+            <rect fill="#ADD8E6" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="171" x="353" y="880.75"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="363" y="903.7451">El Bautismo del Señor</text>
+
+        <path d="M303,1019.6406 L313,1019.6406 C328,1019.6406 328,898.8984 343,898.8984 L353,898.8984 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#ADD8E6" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="152" x="353" y="937.0469"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="363" y="960.042">Las Bodas de Caná</text>
+
+        <path d="M303,1019.6406 L313,1019.6406 C328,1019.6406 328,955.1953 343,955.1953 L353,955.1953 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#ADD8E6" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="329" x="353" y="993.3438"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232" x="363" y="1016.3389">El anuncio del Reino de los Cielos</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="309" x="363" y="1032.6357">y la llamada a la conversión de los pecadores</text>
+
+        <path d="M303,1019.6406 L313,1019.6406 C328,1019.6406 328,1019.6406 343,1019.6406 L353,1019.6406 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#ADD8E6" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="215" x="353" y="1065.9375"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="363" y="1088.9326">La Transfiguración del Señor</text>
+
+        <path d="M303,1019.6406 L313,1019.6406 C328,1019.6406 328,1084.0859 343,1084.0859 L353,1084.0859 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#ADD8E6" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="217" x="353" y="1122.2344"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="363" y="1145.2295">La Institución de la Eucaristía</text>
+
+        <path d="M303,1019.6406 L313,1019.6406 C328,1019.6406 328,1140.3828 343,1140.3828 L353,1140.3828 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1019.6406 122,1019.6406 L132,1019.6406 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#FFBBCC" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="167" x="132" y="1282.9766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="142" y="1305.9717">Viernes</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="142" y="1322.2686">(Misterios Dolorosos)</text>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="181" x="349" y="1178.5313"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="359" y="1201.5264">La Oración en el Huerto</text>
+
+        <path d="M299,1309.2734 L309,1309.2734 C324,1309.2734 324,1196.6797 339,1196.6797 L349,1196.6797 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="186" x="349" y="1234.8281"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="359" y="1257.8232">La Flagelación del Señor</text>
+
+        <path d="M299,1309.2734 L309,1309.2734 C324,1309.2734 324,1252.9766 339,1252.9766 L349,1252.9766 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="198" x="349" y="1291.125"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="359" y="1314.1201">La Coronación de Espinas</text>
+
+        <path d="M299,1309.2734 L309,1309.2734 C324,1309.2734 324,1309.2734 339,1309.2734 L349,1309.2734 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="207" x="349" y="1347.4219"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="359" y="1370.417">Jesús con la cruz a cuestas</text>
+
+        <path d="M299,1309.2734 L309,1309.2734 C324,1309.2734 324,1365.5703 339,1365.5703 L349,1365.5703 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFBBCC" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="177" x="349" y="1403.7188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="359" y="1426.7139">Jesús muere en la cruz</text>
+
+        <path d="M299,1309.2734 L309,1309.2734 C324,1309.2734 324,1421.8672 339,1421.8672 L349,1421.8672 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1309.2734 122,1309.2734 L132,1309.2734 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#90EE90" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="158" x="132" y="1564.4609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="142" y="1587.4561">Sabado</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="142" y="1603.7529">(Misterios Gozosos)</text>
+
+            <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="235" x="340" y="1460.0156"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="350" y="1483.0107">La Encarnación del Hijo de Dios</text>
+
+        <path d="M290,1590.7578 L300,1590.7578 C315,1590.7578 315,1478.1641 330,1478.1641 L340,1478.1641 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="328" x="340" y="1516.3125"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="350" y="1539.3076">La Visitación de María a su prima Santa Isabel</text>
+
+        <path d="M290,1590.7578 L300,1590.7578 C315,1590.7578 315,1534.4609 330,1534.4609 L340,1534.4609 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+            <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="290" x="340" y="1572.6094"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="270" x="350" y="1595.6045">El Nacimiento del Hijo de Dios en Belén</text>
+
+        <path d="M290,1590.7578 L300,1590.7578 C315,1590.7578 315,1590.7578 330,1590.7578 L340,1590.7578 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="283" x="340" y="1628.9063"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="350" y="1651.9014">La presentación de Jesús en el templo</text>
+
+        <path d="M290,1590.7578 L300,1590.7578 C315,1590.7578 315,1647.0547 330,1647.0547 L340,1647.0547 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="282" x="340" y="1685.2031"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="262" x="350" y="1708.1982">El  Niño perdido y hallado en el templo</text>
+
+        <path d="M290,1590.7578 L300,1590.7578 C315,1590.7578 315,1703.3516 330,1703.3516 L340,1703.3516 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1590.7578 122,1590.7578 L132,1590.7578 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+
+        <rect fill="#FFA500" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="161" x="132" y="1854.0938"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="142" y="1877.0889">Domingo</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="142" y="1893.3857">(Misterios Gloriosos)</text>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="201" x="343" y="1741.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="353" y="1764.4951">La Resurrección del Señor</text>
+
+        <path d="M293,1880.3906 L303,1880.3906 C318,1880.3906 318,1759.6484 333,1759.6484 L343,1759.6484 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="234" x="343" y="1797.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="353" y="1820.792">La Ascensión del Señor al Cielo</text>
+
+        <path d="M293,1880.3906 L303,1880.3906 C318,1880.3906 318,1815.9453 333,1815.9453 L343,1815.9453 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="348" x="343" y="1854.0938"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="328" x="353" y="1877.0889">La venida del Espíritu Santo sobre los apóstoles</text>
+
+        <path d="M293,1880.3906 L303,1880.3906 C318,1880.3906 318,1872.2422 333,1872.2422 L343,1872.2422 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="36.2969" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="288" x="343" y="1910.3906"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="353" y="1933.3857">La Asunción de María Santísima al Cielo</text>
+
+        <path d="M293,1880.3906 L303,1880.3906 C318,1880.3906 318,1928.5391 333,1928.5391 L343,1928.5391 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+            <rect fill="#FFA500" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:1.5;" width="336" x="343" y="1966.6875"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="353" y="1989.6826">La Coronación de María Santísima como Reina</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="353" y="2005.9795">y Señora de todo lo creado</text>
+
+        <path d="M293,1880.3906 L303,1880.3906 C318,1880.3906 318,1992.9844 333,1992.9844 L343,1992.9844 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+        <path d="M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1880.3906 122,1880.3906 L132,1880.3906 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+
+        <!--SRC=[xLOzJnj14EtlLun40v624aAYY8hu2t1iG1ZS0CNwRZ2RxEsUziC8_atA51GHNThxOtbxji6SJPDq4OrryhsPUVFcpUXsdHVMvr9dkIXe8BGtT6ASiD8aRyxNRgwbvylf_nVwyGNUA3c-zcFBh2-f5pIx2xtUbyup08xsp9rnncq0MiSAQkjKM2rIMJveobZHllncy40jXAwC64ed_MC0zOKjxmK9Se4AAtDH4HHquCI8rNA6jg93HEUIOtlrYiIQ6gpAdtfbxSAoGznJzIwxydSLXKIUyqAPbINfK9Q_31LiCvaPkgLhePJ0KotoVAtJQJIQpSlObwy9sJBAs0Kfvr0GEx8pJjDy-u6jDqkeZX9ZLWjY3nYix1AkYJ9FCw6sAwGMxZbirdbgD2b1gGrtc44Q61vQZSp1YIE_6Rpg5hpr6ARgIxQfKNNde5-vqF0S3Oedx8ArdAxkPG7unQMiNGr5Gb5JydnO2_09Qvc92egsotihVPYjWZCZDA30InJbW_EHxefoGTUz6SFBUnUz-MBTckJBaQd9iOsCGLpesraRaITv0nif0qqPXdhQnv4AIDqDFAcfsWjOyVf6Jj5mQaC4BrrkbZHTWFM4euR9y8lwJQ7B7wio2Hsbc2QAnAibY_9L2hZO1go0DSX55XSu-iBe2Tlvj2fmmIdQiknMiA1J2EYkv3ZO5qpz77wWdSSy7rL6nNR0_O4qKFlP-WrXIFt_xz_YcHg84PH-FTr_VRhdwzmoMB2nUJrb_tZATXbV8jElaIGvLaXmrkzHTI3W-lURM- -sjZS_ZjYB3-jd-hisDphcBgH2AfdpHhA-Tzn3iy6cJ1bcOUK8ryteZQGh9b0-w8ZReQE2TRVrTVu7h3sHQ2A7OPBkiFy4-BJzjY4zE5lGe64_QV6L2Ch7PJ0Pfhv3PwUTjv-J7kG8sFOTs2Hf6kIrjtWt-0C0]-->
+    </g>
+</svg>

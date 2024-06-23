@@ -1,0 +1,33 @@
+rect.l {
+    fill: #3f3d3d;
+    stroke: #3f3d3d;
+    stroke-width: 0.5;
+  }
+
+rect.lover {
+    fill: #000000;
+    stroke: #000000;
+    stroke-width: 1;
+  }
+
+text.l {
+    fill: #3f3d3d;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+text.lover {
+    fill: #000000;
+    stroke-width: 3;
+  }
+
+.l {
+    fill: #3f3d3d;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+.lover {
+    fill: #000000;
+    stroke-width: 3;
+  }
