@@ -185,6 +185,12 @@
                 <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">y disfrutar de las alegrías eternas. </p>
                 <p onmouseenter="mostrarTexto(this)", onmouseout="ocultarTexto()">Por Cristo nuestro Señor. </p>
                 <p onmouseenter="mostrarTexto(this, this.textContent)", onmouseout="ocultarTexto()">Amén.</p>
+                
+                <h2 onmouseenter="mostrarTexto(this)">Por las intenciones del Santo Padre y las necesidades de la Santa Iglesia católica</h2>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto('Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo.', 'Danos hoy nuestro pan de cada día; perdona nuestras ofensas como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Padre Nuestro</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto('Dios te salve, María, llena eres de gracia; el Señor es contigo. Bendita Tú eres  entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.','Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Ave María</p>
+                <p onclick="ocultar(this)" onmouseenter="mostrarTexto('Gloria al Padre, y al Hijo y al Espíritu Santo. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Gloria</p>
+                
             </div>        
         </div>
         <div class="column right" style="--right-offset: 20px; --right-width: 20px;">
@@ -200,10 +206,11 @@
   <script>
     var mensaje = window.document.getElementById("mensaje");
     function mostrarTexto(obj, respuesta){
+        var frase = obj.textContent ? obj.textContent: obj
         if(respuesta){
-            mensaje.innerHTML = "<span class='frase'>" + obj.textContent + "</span><br><span class='respuesta'>" + respuesta + ".<span>";
+            mensaje.innerHTML = "<span class='frase'>" + frase + "</span><br><span class='respuesta'>" + respuesta + ".<span>";
         } else {
-            mensaje.textContent = obj.textContent;
+            mensaje.textContent = frase;
         }
     }
     function ocultarTexto(){
