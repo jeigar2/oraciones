@@ -207,6 +207,63 @@
   </body>
   <script>
     var mensaje = window.document.getElementById("mensaje");
+    var ultimoParrafoMostrado = null;
+    
+    // Añadir event listener para las teclas
+    document.addEventListener('keydown', function(event) {
+      const parrafos = document.querySelectorAll('p');
+      const parrafosVisibles = Array.from(parrafos).filter(p => p.style.display !== 'none');
+      const primerParrafoVisible = parrafosVisibles[0];
+      
+      // Espacio o flecha abajo
+      if (event.code === 'Space' || event.code === 'ArrowDown') {
+        event.preventDefault(); // Prevenir scroll
+        
+        if (!ultimoParrafoMostrado && primerParrafoVisible) {
+          // Primera pulsación: simular mouseenter
+          const mouseEnterEvent = new MouseEvent('mouseenter');
+          primerParrafoVisible.dispatchEvent(mouseEnterEvent);
+          ultimoParrafoMostrado = primerParrafoVisible;
+        } 
+        else if (ultimoParrafoMostrado) {
+          // Segunda pulsación: simular click, mouseout y mouseenter del siguiente
+          const clickEvent = new MouseEvent('click');
+          const mouseOutEvent = new MouseEvent('mouseout');
+          ultimoParrafoMostrado.dispatchEvent(clickEvent);
+          ultimoParrafoMostrado.dispatchEvent(mouseOutEvent);
+          
+          const siguienteParrafo = parrafosVisibles[1];
+          if (siguienteParrafo) {
+            const mouseEnterEvent = new MouseEvent('mouseenter');
+            siguienteParrafo.dispatchEvent(mouseEnterEvent);
+            ultimoParrafoMostrado = siguienteParrafo;
+          } else {
+            ultimoParrafoMostrado = null;
+          }
+        }
+      }
+      
+      // Flecha arriba
+      if (event.code === 'ArrowUp') {
+        event.preventDefault();
+        const parrafosOcultos = Array.from(parrafos).filter(p => p.style.display === 'none');
+        
+        if (parrafosOcultos.length > 0) {
+          const ultimoOculto = parrafosOcultos[parrafosOcultos.length - 1];
+          ultimoOculto.style.display = '';
+          
+          if (ultimoParrafoMostrado) {
+            const mouseOutEvent = new MouseEvent('mouseout');
+            ultimoParrafoMostrado.dispatchEvent(mouseOutEvent);
+          }
+          
+          const mouseEnterEvent = new MouseEvent('mouseenter');
+          ultimoOculto.dispatchEvent(mouseEnterEvent);
+          ultimoParrafoMostrado = ultimoOculto;
+        }
+      }
+    });
+
     function mostrarTexto(obj, respuesta){
         var frase = obj.textContent ? obj.textContent: obj
         if(respuesta){
