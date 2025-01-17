@@ -75,18 +75,27 @@ button {
     max-width: 80%;
     max-height: 80vh;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 9999;
+    cursor: default;
+    display: block;
+    visibility: visible;
 }
 
 .capa-flotante .imagen-container {
     position: relative;
     margin-bottom: 20px;
+    z-index: 10000;
 }
 
 .capa-flotante img {
     width: 100%;
     max-height: 40vh;
     object-fit: contain;
+    display: block;
+}
+
+.capa-flotante * {
+    visibility: visible;
 }
 
 .capa-flotante .autor {
@@ -116,4 +125,35 @@ button {
     cursor: pointer;
     font-size: 24px;
     color: #333;
+    z-index: 10001;
+}
+
+.navegacion-misterios {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.nav-btn {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.nav-btn.anterior {
+    margin-right: auto;
+}
+
+.nav-btn.siguiente {
+    margin-left: auto;
 }

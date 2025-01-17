@@ -186,9 +186,14 @@ let formularioActual = Math.floor(Math.random() * 3) + 1;
 
 // mostrar traza con el formulario actual
 traza("Formulario actual: " + formularioActual);
-
 function mostrarMisterio(diaId, numeroMisterio) {
     traza("Mostrando misterio " + numeroMisterio + " del día " + diaId);
+    
+    // Remover cualquier capa flotante existente
+    const capaExistente = document.querySelector('.capa-flotante');
+    if (capaExistente) {
+        capaExistente.remove();
+    }
     
     // Mapear el ID del día al nombre del día
     const mapaDias = {
@@ -211,6 +216,18 @@ function mostrarMisterio(diaId, numeroMisterio) {
     // Crear la capa flotante
     const capaFlotante = document.createElement('div');
     capaFlotante.className = 'capa-flotante';
+    capaFlotante.style.display = 'block';
+    capaFlotante.style.visibility = 'visible';
+    
+    // Preparar los botones de navegación
+    let botonesNavegacion = '';
+    if (numeroMisterio > 1) {
+        botonesNavegacion += `<button class="nav-btn anterior" onclick="mostrarMisterio('${diaId}', ${numeroMisterio - 1})">← Anterior</button>`;
+    }
+    if (numeroMisterio < 5) {
+        botonesNavegacion += `<button class="nav-btn siguiente" onclick="mostrarMisterio('${diaId}', ${numeroMisterio + 1})">Siguiente →</button>`;
+    }
+    
     capaFlotante.innerHTML = `
         <span class="cerrar-flotante" onclick="this.parentElement.remove()">&times;</span>
         <div class="imagen-container">
@@ -223,14 +240,51 @@ function mostrarMisterio(diaId, numeroMisterio) {
             <p class="cita">${misterio.cita}</p>
             <p class="meditacion">${misterio.meditacion}</p>
         </div>
+        <div class="navegacion-misterios">
+            ${botonesNavegacion}
+        </div>
     `;
+    
+    // Asegurarnos de que todos los elementos dentro de la capa sean visibles
+    Array.from(capaFlotante.getElementsByTagName('*')).forEach(element => {
+        element.style.visibility = 'visible';
+    });
+    
+    // Función para cerrar la capa
+    function cerrarCapa() {
+        capaFlotante.remove();
+        document.removeEventListener('click', cerrarAlClickFuera);
+        document.removeEventListener('keydown', cerrarConEsc);
+    }
+    
+    // Función para manejar clic fuera
+    function cerrarAlClickFuera(e) {
+        if (!capaFlotante.contains(e.target)) {
+            cerrarCapa();
+        }
+    }
+    
+    // Función para manejar tecla ESC
+    function cerrarConEsc(e) {
+        if (e.key === 'Escape') {
+            cerrarCapa();
+        }
+    }
+    
+    // Prevenir que los clics dentro de la capa la cierren
+    capaFlotante.addEventListener('click', e => e.stopPropagation());
+    
+    // Agregar los event listeners
+    document.addEventListener('click', cerrarAlClickFuera);
+    document.addEventListener('keydown', cerrarConEsc);
     
     document.body.appendChild(capaFlotante);
 }
 
 // Modificar la función toggleVisibility para incluir la funcionalidad de mostrar misterio
 function toggleVisibilityMisterio(nodeId) {
-    // ... código existente de toggleVisibility ...
+    // Prevenir que el evento se propague al SVG
+    event.stopPropagation();
     
     // Verificar si es un clic en un misterio
     if (nodeId.match(/^[R][LMXJVSD][1-5]$/)) {

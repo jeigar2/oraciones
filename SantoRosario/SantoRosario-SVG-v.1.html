@@ -19,8 +19,8 @@
             <text id="L" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="142" y="147.4404" onclick="toggleVisibility('Lunes')">Lunes</text>
             <text id="TL" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="142" y="163.7373" onclick="toggleVisibility('Lunes')">(Misterios Gozosos)</text>
             
-            <rect id="RL1" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#3f3d3d;stroke-width:1.5;" width="235" x="340" y="20" onclick="toggleVisibilityMisterio('RL1')"/>
-            <text id="TL1" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="350" y="42.9951" onclick="toggleVisibilityMisterio('RL1')">La Encarnación del Hijo de Dios</text>
+            <rect id="RL1" fill="#90EE90" height="36.2969" rx="12.5" ry="12.5" style="stroke:#3f3d3d;stroke-width:1.5;" width="235" x="340" y="20" onclick="event.stopPropagation(); toggleVisibilityMisterio('RL1')"/>
+            <text id="TL1" fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="350" y="42.9951" onclick="event.stopPropagation(); toggleVisibilityMisterio('RL1')">La Encarnación del Hijo de Dios</text>
             
             <path id="PL1" d="M290,150.7422 L300,150.7422 C315,150.7422 315,38.1484 330,38.1484 L340,38.1484 " fill="none" style="stroke:#3f3d3d;stroke-width:1.0;"/>
             
