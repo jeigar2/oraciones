@@ -1,3 +1,8 @@
+function traza(mensaje){
+  var capa = document.getElementById("evento");
+  capa.innerText = mensaje;
+}
+
 function toggleVisibility(parentId) {
     traza("toggleVisibility: " + parentId);
     
@@ -164,5 +169,73 @@ function toggleVisibility(parentId) {
         validElements.forEach(element => {
             element.setAttribute('visibility', newVisibility);
         });
+    }
+}
+
+
+// Tomada las metidaciones por formulario de esta 
+// url https://contemplativos.com/espiritualidad/oracion/el-rosario-meditado/
+const formularios = {
+  1: formulario1,
+  2: formulario2,
+  3: formulario3
+};
+
+// obtener el formulario actual desde un valor aleatorio
+let formularioActual = Math.floor(Math.random() * 3) + 1;
+
+// mostrar traza con el formulario actual
+traza("Formulario actual: " + formularioActual);
+
+function mostrarMisterio(diaId, numeroMisterio) {
+    traza("Mostrando misterio " + numeroMisterio + " del día " + diaId);
+    
+    // Mapear el ID del día al nombre del día
+    const mapaDias = {
+        'L': 'Lunes',
+        'M': 'Martes',
+        'X': 'Miercoles',
+        'J': 'Jueves',
+        'V': 'Viernes',
+        'S': 'Sabado',
+        'D': 'Domingo'
+    };
+    
+    const dia = mapaDias[diaId];
+    const misterio = formularios[formularioActual][dia].misterios[numeroMisterio - 1];
+    const imagen = formularios[formularioActual][dia].imagen;
+    
+    // Separar autor y obra
+    const [autor, obra] = imagen.autor_obra.split(',').map(s => s.trim());
+    
+    // Crear la capa flotante
+    const capaFlotante = document.createElement('div');
+    capaFlotante.className = 'capa-flotante';
+    capaFlotante.innerHTML = `
+        <span class="cerrar-flotante" onclick="this.parentElement.remove()">&times;</span>
+        <div class="imagen-container">
+            <img src="${imagen.src}" alt="${obra}">
+            <p><span class="autor">${autor}</span>, <span class="obra">${obra}</span></p>
+        </div>
+        <div class="contenido-misterio">
+            <p>Misterio ${misterio.numero}</p>
+            <p class="titulo-misterio">${misterio.titulo}</p>
+            <p class="cita">${misterio.cita}</p>
+            <p class="meditacion">${misterio.meditacion}</p>
+        </div>
+    `;
+    
+    document.body.appendChild(capaFlotante);
+}
+
+// Modificar la función toggleVisibility para incluir la funcionalidad de mostrar misterio
+function toggleVisibilityMisterio(nodeId) {
+    // ... código existente de toggleVisibility ...
+    
+    // Verificar si es un clic en un misterio
+    if (nodeId.match(/^[R][LMXJVSD][1-5]$/)) {
+        const dia = nodeId[1];  // L, M, X, J, V, S o D
+        const numeroMisterio = parseInt(nodeId[2]);
+        mostrarMisterio(dia, numeroMisterio);
     }
 }
