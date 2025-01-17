@@ -251,6 +251,92 @@
   </body>
   <script>
     var mensaje = window.document.getElementById("mensaje");
+    var currentIndex = -1;
+    var elements = [];
+    
+    // Función para inicializar el array de elementos interactivos
+    function initializeElements() {
+        elements = Array.from(document.querySelectorAll('p[onmouseenter], li[onmouseenter]'));
+    }
+
+    // Función para simular eventos del mouse
+    function simulateEvent(element, eventName) {
+        var event = new MouseEvent(eventName, {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+        element.dispatchEvent(event);
+        
+        // Agregamos o quitamos el efecto hover
+        if (eventName === 'mouseenter') {
+            element.style.backgroundColor = '#0000ff';
+            element.style.color = '#fff';
+        } else if (eventName === 'mouseout') {
+            element.style.backgroundColor = '';
+            element.style.color = '';
+        }
+    }
+
+    // Función para manejar el scroll
+    function scrollToElement(element) {
+        const leftColumn = document.querySelector('.column.left');
+        const elementRect = element.getBoundingClientRect();
+        const containerRect = leftColumn.getBoundingClientRect();
+        
+        if (elementRect.bottom > containerRect.bottom || elementRect.top < containerRect.top) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    // Función para manejar el movimiento hacia adelante
+    function moveForward() {
+        if (currentIndex >= 0) {
+            simulateEvent(elements[currentIndex], 'mouseout');
+            elements[currentIndex].style.color = 'gray'; // Restaurar color gris
+        }
+        currentIndex++;
+        if (currentIndex >= elements.length) {
+            currentIndex = 0;
+        }
+        simulateEvent(elements[currentIndex], 'mouseenter');
+        scrollToElement(elements[currentIndex]);
+    }
+
+    // Función para manejar el movimiento hacia atrás
+    function moveBackward() {
+        if (currentIndex >= 0) {
+            simulateEvent(elements[currentIndex], 'mouseout');
+            elements[currentIndex].style.color = 'gray'; // Restaurar color gris
+        }
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = elements.length - 1;
+        }
+        simulateEvent(elements[currentIndex], 'mouseenter');
+        scrollToElement(elements[currentIndex]);
+    }
+
+    // Event listener para las teclas
+    document.addEventListener('keydown', function(event) {
+        if (elements.length === 0) {
+            initializeElements();
+        }
+        
+        switch(event.key) {
+            case ' ':
+            case 'ArrowDown':
+                event.preventDefault();
+                moveForward();
+                break;
+            case 'ArrowUp':
+                event.preventDefault();
+                moveBackward();
+                break;
+        }
+    });
+
+    // Las funciones existentes se mantienen igual
     function mostrarTexto(obj, respuesta){
         var frase = obj.textContent ? obj.textContent: obj
         if(respuesta){
@@ -262,17 +348,23 @@
         var maxTop = imageColumn.clientHeight - mensaje.offsetHeight - 40;
         mensaje.style.top = Math.min(510, maxTop) + "px";
     }
+    
     function mostrarHTML(fragmentoHTML, altura){
         mensaje.innerHTML = fragmentoHTML;
         var imageColumn = document.getElementById('image-column');
         var maxTop = imageColumn.clientHeight - mensaje.offsetHeight - 40;
         mensaje.style.top = Math.min(altura, maxTop) + "px";
     }
+    
     function ocultarTexto(){
         mensaje.textContent = "";
     }
+    
     function ocultar(obj){
         obj.style.display='none';
     }
+
+    // Inicializamos los elementos cuando se carga la página
+    window.addEventListener('load', initializeElements);
   </script>
 </html>
