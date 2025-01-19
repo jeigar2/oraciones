@@ -314,11 +314,13 @@
 
             //si matchTexto es numerico pero es cero, no reproducir audio
             if(matchTexto && matchTexto[1] == parseInt(0)){
+              stopAllAudios();
               return;
             }
             // si matchHTML es numerico pero es cero, no reproducir audio
             if(matchHTML && matchHTML[1] == parseInt(0)){
-                return;
+              stopAllAudios();
+              return;
             }
 
             // Reproducimos el audio solo si encontramos un id numérico mayor que 0
