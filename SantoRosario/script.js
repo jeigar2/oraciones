@@ -2,9 +2,9 @@
 let historialTrazas = [];
 
 function traza(mensaje){
-  var capa = document.getElementById("evento");
-  capa.innerText = mensaje;
-  historialTrazas.push(new Date().toLocaleTimeString() + ": " + mensaje);
+    var capa = document.getElementById("evento");
+    capa.innerText = mensaje;
+    historialTrazas.push(new Date().toLocaleTimeString() + ": " + mensaje);
 }
 
 function toggleVisibility(parentId) {
@@ -236,20 +236,14 @@ function mostrarMisterio(diaId, numeroMisterio) {
     const imagen = formularios[formularioActual][dia].imagen;
     let imagenesSantoRosario = null;
     
-    // Cargar las imágenes alternativas siempre, para tenerlas disponibles
-    const cargarImagenes = () => {
-        fetch('Imagenes-Santo_Rosario.json')
-            .then(response => response.json())
-            .then(data => {
-                const tipoMisterio = tipo + "s";
-                imagenesSantoRosario = data[tipoMisterio].imagenes;
-                if (usarImagenesAlternativas) {
-                    cambiarImagen(true);
-                }
-            });
-            traza("Imagenes alternativas: " + imagenesSantoRosario.length);
-    };
-    cargarImagenes();
+    // Cargar las imágenes alternativas según el tipo de misterio
+    fetch('Imagenes-Santo_Rosario.json')
+        .then(response => response.json())
+        .then(data => {
+            const tipoMisterio = tipo + "s"; // Convertir "Gozoso" a "Gozosos", etc.
+            imagenesSantoRosario = data[tipoMisterio].imagenes;
+            
+        });
     
     // Separar autor y obra
     const [autor, obra] = imagen.autor_obra.split(',').map(s => s.trim());
@@ -350,30 +344,36 @@ function mostrarMisterio(diaId, numeroMisterio) {
             if (posicionActual < 10) {
                 posicionActual++;
                 actualizarBolas();
+                traza("Avanzar misterio");
             }
         } else if (e.key === 'ArrowLeft') {
             // Flecha izquierda: retroceder bola
             if (posicionActual >= 0) {
                 posicionActual--;
                 actualizarBolas();
+                traza("Retroceder misterio");
             }
         } else if (e.key === '+') {
             // AvPág: siguiente misterio
             if (numeroMisterio < 5) {
                 mostrarMisterio(diaId, numeroMisterio + 1);
+                traza("Avanzar misterio");
             } else {
                 // Opcional: dar feedback visual o sonoro de que no hay más misterios
                 btnAvanzar.style.backgroundColor = '#ffdddd';
                 setTimeout(() => btnAvanzar.style.backgroundColor = '', 200);
+                traza("No se puede avanzar más, ya estamos en el último misterio");
             }
         } else if (e.key === '-') {
             // RePág: misterio anterior
             if (numeroMisterio > 1) {
                 mostrarMisterio(diaId, numeroMisterio - 1);
+                traza("Retroceder misterio");
             } else {
                 // Opcional: dar feedback visual o sonoro de que no hay más misterios
                 btnRetroceder.style.backgroundColor = '#ffdddd';
                 setTimeout(() => btnRetroceder.style.backgroundColor = '', 200);
+                traza("No se puede retroceder más, ya estamos en el primer misterio");
             }
         }
         e.preventDefault(); // Prevenir el comportamiento por defecto
@@ -385,11 +385,13 @@ function mostrarMisterio(diaId, numeroMisterio) {
     btnAvanzar.addEventListener('click', () => {
         posicionActual++;
         actualizarBolas();
+        traza("Avanzar misterio");
     });
     
     btnRetroceder.addEventListener('click', () => {
         posicionActual--;
         actualizarBolas();
+        traza("Retroceder misterio");
     });
     
     function actualizarBolas() {
@@ -418,6 +420,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
     function cerrarAlClickFuera(e) {
         if (!capaFlotante.contains(e.target)) {
             cerrarCapa();
+            traza("Cerrar ventana con clic fuera");
         }
     }
     
@@ -425,6 +428,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
     function cerrarConEsc(e) {
         if (e.key === 'Escape') {
             cerrarCapa();
+            traza("Cerrar ventana con ESC");
         }
     }
     
@@ -451,6 +455,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
 // Modificar la función toggleVisibility para incluir la funcionalidad de mostrar misterio
 function toggleVisibilityMisterio(nodeId) {
     // Prevenir que el evento se propague al SVG si existe el evento
+
     if (event) {
         event.stopPropagation();
     }
@@ -467,8 +472,11 @@ function toggleVisibilityMisterio(nodeId) {
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'h') {
         mostrarAyuda();
+
     } else if (e.key.toLowerCase() === 'l') {
         mostrarHistorial();
+    } else if (e.key.toLowerCase() === 'i') {   
+        cambiarImagen(e.target.checked);
     }
 });
 
@@ -478,6 +486,7 @@ function mostrarAyuda() {
     if (ayudaExistente) {
         ayudaExistente.remove();
         document.removeEventListener('keydown', cerrarAyudaConEsc);
+        traza("Cerrar ventana Ayuda");
         return;
     }
     
@@ -492,7 +501,9 @@ function mostrarAyuda() {
                 <li><strong>-</strong> Misterio anterior</li>
                 <li><strong>ESC</strong> Cerrar ventana</li>
                 <li><strong>H</strong> Mostrar/ocultar esta ayuda</li>
+                <li><strong>I</strong> Usar imágenes alternativas</li>
                 <li><strong>L</strong> Mostrar/ocultar historial de eventos</li>
+
             </ul>
         </div>
     `;
@@ -520,6 +531,7 @@ function mostrarAyuda() {
     }
     
     document.addEventListener('keydown', cerrarAyudaConEsc);
+    traza("Mostrar Ayuda");
 }
 
 // Función para mostrar el historial
@@ -528,6 +540,7 @@ function mostrarHistorial() {
     if (historialExistente) {
         historialExistente.remove();
         document.removeEventListener('keydown', cerrarHistorialConEsc);
+        traza("Cerrar ventana Historial");
         return;
     }
     
@@ -560,8 +573,10 @@ function mostrarHistorial() {
         if (e.key === 'Escape') {
             cerrarHistorial();
             e.stopPropagation();
+            traza("Cerrar ventana Historial con ESC");
         }
     }
     
     document.addEventListener('keydown', cerrarHistorialConEsc);
+    traza("Mostrar Historial");
 }
