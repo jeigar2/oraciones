@@ -211,6 +211,13 @@ traza("Formulario actual: " + formularioActual);
 // Variable global para el estado de las imágenes alternativas
 let usarImagenesAlternativas = false;
 
+// Variables globales de configuración
+let configuracion = {
+    tiempoOracion: 10000,
+    tiempoFeedback: 200,
+    autoOcultarOracion: true
+};
+
 function mostrarMisterio(diaId, numeroMisterio) {
     traza("Mostrando misterio " + numeroMisterio + " del día " + diaId);
     
@@ -414,6 +421,12 @@ function mostrarMisterio(diaId, numeroMisterio) {
     
     // Función para mostrar la oración
     function mostrarOracion(tipo) {
+        // Verificar si existe la capa del misterio
+        const capaMisterio = document.querySelector('.capa-flotante');
+        if (!capaMisterio) {
+            return;
+        }
+        
         const oraciones = {
             padrenuestro: {
                 primera: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo.",
@@ -441,20 +454,29 @@ function mostrarMisterio(diaId, numeroMisterio) {
         
         document.body.appendChild(capaOracion);
         
-        // Auto-ocultar después de 5 segundos
-        setTimeout(() => {
-            if (capaOracion.parentNode) {
-                capaOracion.remove();
-            }
-        }, 10000);
+        // Auto-ocultar si está configurado
+        if (configuracion.autoOcultarOracion) {
+            setTimeout(() => {
+                if (capaOracion.parentNode) {
+                    capaOracion.remove();
+                }
+            }, configuracion.tiempoOracion);
+        }
     }
     
     // Función para cerrar la capa
     function cerrarCapa() {
         capaFlotante.remove();
+        // Ocultar la capa de oración si existe
+        const capaOracion = document.querySelector('.capa-oracion');
+        if (capaOracion) {
+            capaOracion.remove();
+            traza("Cerrar ventana oración");
+        }
         document.removeEventListener('click', cerrarAlClickFuera);
         document.removeEventListener('keydown', cerrarConEsc);
         document.removeEventListener('keydown', manejarTeclado);
+        traza("Cerrar ventana misterio");
     }
     
     // Función para manejar clic fuera
@@ -515,6 +537,8 @@ document.addEventListener('keydown', (e) => {
         mostrarAyuda();
     } else if (e.key.toLowerCase() === 'l') {
         mostrarHistorial();
+    } else if (e.key.toLowerCase() === 'c') {
+        mostrarConfiguracion();
     } else if (e.key.toLowerCase() === 'i') {   
         cambiarImagen(e.target.checked);
     } else {
@@ -563,6 +587,7 @@ function mostrarAyuda() {
                 <li><strong>H</strong> Mostrar/ocultar esta ayuda</li>
                 <li><strong>I</strong> Usar imágenes alternativas</li>
                 <li><strong>L</strong> Mostrar/ocultar historial de eventos</li>
+                <li><strong>C</strong> Mostrar configuración</li>
                 <li><strong>0</strong> Mostrar/ocultar Santo Rosario</li>
                 <li><strong>1-7</strong> Mostrar/ocultar días (1:Lunes ... 7:Domingo)</li>
             </ul>
@@ -640,4 +665,74 @@ function mostrarHistorial() {
     
     document.addEventListener('keydown', cerrarHistorialConEsc);
     traza("Mostrar Historial");
+}
+
+// Función para mostrar la configuración
+function mostrarConfiguracion() {
+    const configExistente = document.querySelector('.capa-configuracion');
+    if (configExistente) {
+        configExistente.remove();
+        document.removeEventListener('keydown', cerrarConfigConEsc);
+        traza("Cerrar ventana Configuración");
+        return;
+    }
+    
+    const configHTML = `
+        <div class="capa-configuracion">
+            <span class="cerrar-flotante" onclick="cerrarConfiguracion()">&times;</span>
+            <h2>Configuración</h2>
+            <div class="config-contenido">
+                <div class="config-item">
+                    <label for="tiempoOracion">Tiempo mostrar oración (segundos):</label>
+                    <input type="number" id="tiempoOracion" min="1" max="30" 
+                        value="${configuracion.tiempoOracion/1000}">
+                </div>
+                <div class="config-item">
+                    <label>
+                        <input type="checkbox" id="autoOcultarOracion" 
+                            ${configuracion.autoOcultarOracion ? 'checked' : ''}>
+                        Auto-ocultar oración
+                    </label>
+                </div>
+                <button class="config-guardar" onclick="guardarConfiguracion()">Guardar</button>
+            </div>
+        </div>
+    `;
+    
+    const configElement = document.createElement('div');
+    configElement.innerHTML = configHTML;
+    const capaConfig = configElement.firstElementChild;
+    document.body.appendChild(capaConfig);
+    
+    // Función global para cerrar la configuración
+    window.cerrarConfiguracion = function() {
+        const config = document.querySelector('.capa-configuracion');
+        if (config) {
+            config.remove();
+            document.removeEventListener('keydown', cerrarConfigConEsc);
+        }
+    };
+    
+    // Función global para guardar la configuración
+    window.guardarConfiguracion = function() {
+        const tiempoOracion = document.getElementById('tiempoOracion').value;
+        const autoOcultar = document.getElementById('autoOcultarOracion').checked;
+        
+        configuracion.tiempoOracion = tiempoOracion * 1000;
+        configuracion.autoOcultarOracion = autoOcultar;
+        
+        cerrarConfiguracion();
+        traza("Configuración guardada");
+    };
+    
+    // Función para cerrar con ESC
+    function cerrarConfigConEsc(e) {
+        if (e.key === 'Escape') {
+            cerrarConfiguracion();
+            e.stopPropagation();
+        }
+    }
+    
+    document.addEventListener('keydown', cerrarConfigConEsc);
+    traza("Mostrar Configuración");
 }
