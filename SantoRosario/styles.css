@@ -371,3 +371,10 @@ button {
 .config-guardar:hover {
     background-color: #45a049;
 }
+
+.version {
+    font-size: 0.6em;
+    color: #770;
+    font-weight: normal;
+    margin-left: 10px;
+}

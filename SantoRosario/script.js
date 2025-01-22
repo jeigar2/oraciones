@@ -2,7 +2,8 @@
 let configuracion = {
     tiempoOracion: 10000,
     autoOcultarOracion: true,
-    maxTrazas: 100
+    maxTrazas: 100,
+    version: '3.1'
 };
 
 // Variable global para almacenar el historial de trazas
@@ -544,6 +545,11 @@ function toggleVisibilityMisterio(nodeId) {
 
 // Event listener global para la tecla H
 document.addEventListener('keydown', (e) => {
+    // Si hay un input activo, no procesar atajos de teclado
+    if (document.activeElement.tagName === 'INPUT') {
+        return;
+    }
+
     if (e.key.toLowerCase() === 'h') {
         mostrarAyuda();
     } else if (e.key.toLowerCase() === 'l') {
@@ -574,6 +580,9 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Variable para controlar si hay cambios sin guardar
+let configCambiada = false;
 
 // Función para mostrar la ayuda
 function mostrarAyuda() {
@@ -688,10 +697,13 @@ function mostrarConfiguracion() {
         return;
     }
     
+    // Resetear el estado de cambios
+    configCambiada = false;
+    
     const configHTML = `
         <div class="capa-configuracion">
-            <span class="cerrar-flotante" onclick="cerrarConfiguracion()">&times;</span>
-            <h2>Configuración</h2>
+            <span class="cerrar-flotante" onclick="intentarCerrarConfiguracion()">&times;</span>
+            <h2>Configuración <span class="version">v.${configuracion.version}</span></h2>
             <div class="config-contenido">
                 <div class="config-item">
                     <label for="tiempoOracion">Tiempo mostrar oración (segundos):</label>
@@ -720,6 +732,27 @@ function mostrarConfiguracion() {
     const capaConfig = configElement.firstElementChild;
     document.body.appendChild(capaConfig);
     
+    // Añadir detectores de cambios
+    ['tiempoOracion', 'autoOcultarOracion', 'maxTrazas'].forEach(id => {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.addEventListener('change', () => configCambiada = true);
+            elemento.addEventListener('input', () => configCambiada = true);
+        }
+    });
+    
+    // Función global para intentar cerrar la configuración
+    window.intentarCerrarConfiguracion = function() {
+        if (configCambiada) {
+            if (confirm('Hay cambios sin guardar. ¿Desea salir sin guardar?')) {
+                cerrarConfiguracion();
+                traza("Configuración cerrada sin guardar");
+            }
+        } else {
+            cerrarConfiguracion();
+        }
+    };
+    
     // Función global para cerrar la configuración
     window.cerrarConfiguracion = function() {
         const config = document.querySelector('.capa-configuracion');
@@ -739,11 +772,11 @@ function mostrarConfiguracion() {
         configuracion.autoOcultarOracion = autoOcultar;
         configuracion.maxTrazas = parseInt(maxTrazas);
         
-        //Ajustar el historial al nuevo límite si es necesario
         if (historialTrazas.length > configuracion.maxTrazas) {
             historialTrazas = historialTrazas.slice(-configuracion.maxTrazas);
         }
         
+        configCambiada = false;
         cerrarConfiguracion();
         traza("Configuración guardada");
     };
@@ -751,7 +784,7 @@ function mostrarConfiguracion() {
     // Función para cerrar con ESC
     function cerrarConfigConEsc(e) {
         if (e.key === 'Escape') {
-            cerrarConfiguracion();
+            intentarCerrarConfiguracion();
             e.stopPropagation();
         }
     }
