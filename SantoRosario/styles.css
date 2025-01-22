@@ -288,3 +288,39 @@ button {
 .traza-item:last-child {
     border-bottom: none;
 }
+
+.capa-oracion {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 10002;
+    text-align: center;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.oracion-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.primera-parte {
+    color: #2e7d32;  /* Verde */
+    margin: 0;
+}
+
+.segunda-parte {
+    color: #c62828;  /* Rojo */
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, 20px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}

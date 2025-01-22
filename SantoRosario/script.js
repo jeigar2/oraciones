@@ -400,12 +400,53 @@ function mostrarMisterio(diaId, numeroMisterio) {
             bola.classList.remove('activa');
             if (index <= posicionActual) {
                 bola.classList.add('activa');
+                // Si es la primera activación de una bola, mostrar la oración correspondiente
+                if (index === posicionActual) {
+                    mostrarOracion(index === 0 ? 'padrenuestro' : 'avemaria');
+                }
             }
         });
 
         // Actualizar botones
         btnRetroceder.disabled = posicionActual < 0;
         btnAvanzar.disabled = posicionActual >= 10;
+    }
+    
+    // Función para mostrar la oración
+    function mostrarOracion(tipo) {
+        const oraciones = {
+            padrenuestro: {
+                primera: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo.",
+                segunda: "Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén."
+            },
+            avemaria: {
+                primera: "Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.",
+                segunda: "Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén."
+            }
+        };
+        
+        // Remover oración anterior si existe
+        const oracionExistente = document.querySelector('.capa-oracion');
+        if (oracionExistente) oracionExistente.remove();
+        
+        const oracion = oraciones[tipo];
+        const capaOracion = document.createElement('div');
+        capaOracion.className = 'capa-oracion';
+        capaOracion.innerHTML = `
+            <div class="oracion-contenido">
+                <p class="primera-parte">${oracion.primera}</p>
+                <p class="segunda-parte">${oracion.segunda}</p>
+            </div>
+        `;
+        
+        document.body.appendChild(capaOracion);
+        
+        // Auto-ocultar después de 5 segundos
+        setTimeout(() => {
+            if (capaOracion.parentNode) {
+                capaOracion.remove();
+            }
+        }, 10000);
     }
     
     // Función para cerrar la capa
@@ -472,11 +513,30 @@ function toggleVisibilityMisterio(nodeId) {
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'h') {
         mostrarAyuda();
-
     } else if (e.key.toLowerCase() === 'l') {
         mostrarHistorial();
     } else if (e.key.toLowerCase() === 'i') {   
         cambiarImagen(e.target.checked);
+    } else {
+        // Mapeo de teclas numéricas a días
+        const teclasDias = {
+            '0': 'SantoRosario',
+            '1': 'Lunes',
+            '2': 'Martes',
+            '3': 'Miercoles',
+            '4': 'Jueves',
+            '5': 'Viernes',
+            '6': 'Sabado',
+            '7': 'Domingo'
+        };
+        
+        if (teclasDias[e.key]) {
+            const nodo = document.getElementById(teclasDias[e.key]);
+            if (nodo) {
+                toggleVisibility(teclasDias[e.key]);
+                traza(`Activado ${teclasDias[e.key]} con tecla ${e.key}`);
+            }
+        }
     }
 });
 
@@ -503,7 +563,8 @@ function mostrarAyuda() {
                 <li><strong>H</strong> Mostrar/ocultar esta ayuda</li>
                 <li><strong>I</strong> Usar imágenes alternativas</li>
                 <li><strong>L</strong> Mostrar/ocultar historial de eventos</li>
-
+                <li><strong>0</strong> Mostrar/ocultar Santo Rosario</li>
+                <li><strong>1-7</strong> Mostrar/ocultar días (1:Lunes ... 7:Domingo)</li>
             </ul>
         </div>
     `;
