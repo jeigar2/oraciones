@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Oraciones Católicas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .version {
+            font-size: 0.6em;
+            color: #770;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background-color: white;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .menu-item i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #6c757d;
+        }
+
+        .menu-item:hover i {
+            color: #495057;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .menu-item p {
+            margin: 10px 0 0;
+            font-size: 0.9em;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .tecla {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #f1f3f5;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #495057;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #6c757d;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Oraciones Católicas <span class="version">v.3.1</span></h1>
+    </div>
+
+    <div class="menu-grid">
+        <a href="SantoRosario/SantoRosario-SVG-v.1.html" class="menu-item">
+            <i class="fas fa-pray"></i>
+            <h3>Santo Rosario</h3>
+            <p>Reza el Santo Rosario con meditaciones</p>
+            <span class="tecla">Alt+R</span>
+        </a>
+
+        <a href="CoronillaDivinaMisericordia.html" class="menu-item">
+            <i class="fas fa-cross"></i>
+            <h3>Coronilla</h3>
+            <p>Coronilla de la Divina Misericordia</p>
+            <span class="tecla">Alt+C</span>
+        </a>
+
+        <a href="Letanias_.html" class="menu-item">
+            <i class="fas fa-church"></i>
+            <h3>Letanías</h3>
+            <p>Letanías a la Virgen María</p>
+            <span class="tecla">Alt+L</span>
+        </a>
+
+        <a href="Magnificat.html" class="menu-item">
+            <i class="fas fa-dove"></i>
+            <h3>Magníficat</h3>
+            <p>Cántico de María</p>
+            <span class="tecla">Alt+M</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2024 Oraciones Católicas - Desarrollado con ❤️ para mayor gloria de Dios</p>
+    </footer>
+
+    <script>
+        // Manejar atajos de teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey) {
+                switch(e.key.toLowerCase()) {
+                    case 'r':
+                        window.location.href = 'SantoRosario/SantoRosario-SVG-v.1.html';
+                        break;
+                    case 'c':
+                        window.location.href = 'CoronillaDivinaMisericordia.html';
+                        break;
+                    case 'l':
+                        window.location.href = 'Letanias.html';
+                        break;
+                    case 'm':
+                        window.location.href = 'Magnificat.html';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

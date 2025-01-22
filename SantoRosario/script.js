@@ -809,3 +809,26 @@ function mostrarConfiguracion() {
     document.addEventListener('keydown', cerrarConfigConEsc);
     traza("Mostrar Configuración");
 }
+
+// Función para controlar el menú lateral
+function toggleMenu() {
+    const sidebar = document.querySelector('.menu-sidebar');
+    const overlay = document.querySelector('.menu-overlay');
+    
+    if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        overlay.style.display = 'none';
+        traza("Cerrar menú lateral");
+    } else {
+        sidebar.classList.add('active');
+        overlay.style.display = 'block';
+        traza("Abrir menú lateral");
+    }
+}
+
+// Añadir atajo Alt+H para el menú
+document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key.toLowerCase() === 'h') {
+        toggleMenu();
+    }
+});

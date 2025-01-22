@@ -1,5 +1,8 @@
 # oraciones
 
+- v2.2.0
+  - Se ha añadido el menú principal
+
 HTML que tiene las oraciones, y se pueden seguir con el cursor.
 
 ## Magnificat
