@@ -32,6 +32,13 @@ HTML que tiene las oraciones, y se pueden seguir con el cursor.
   - Se puede usar el teclado para avanzar y retroceder por el rezo del Padre Nuestro y llos Ave María
   - Se puede usar el teclado para mostrar el historial de eventos
   - Se puede usar el teclado para mostrar las imágenes alternativas (PTE)
+- v3.1
+  - Se puede usar el teclado para mostrar la configuración
+  - la configuracion consiste en
+    - tiempo de oración
+    - auto-ocultar oración
+    - maxTrazas
+
   
 ## Letanías lauretanas
 

@@ -1,10 +1,28 @@
+// Variables globales de configuración
+let configuracion = {
+    tiempoOracion: 10000,
+    autoOcultarOracion: true,
+    maxTrazas: 100
+};
+
 // Variable global para almacenar el historial de trazas
 let historialTrazas = [];
+
+// Variable para el contador de trazas
+let contadorTrazas = 0;
 
 function traza(mensaje){
     var capa = document.getElementById("evento");
     capa.innerText = mensaje;
-    historialTrazas.push(new Date().toLocaleTimeString() + ": " + mensaje);
+    
+    // Añadir nueva traza
+    contadorTrazas++;
+    historialTrazas.push(`#${contadorTrazas} - ${new Date().toLocaleTimeString()}: ${mensaje}`);
+    
+    // Limitar el número de trazas
+    if (historialTrazas.length > configuracion.maxTrazas) {
+        historialTrazas = historialTrazas.slice(-configuracion.maxTrazas);
+    }
 }
 
 function toggleVisibility(parentId) {
@@ -211,13 +229,6 @@ traza("Formulario actual: " + formularioActual);
 // Variable global para el estado de las imágenes alternativas
 let usarImagenesAlternativas = false;
 
-// Variables globales de configuración
-let configuracion = {
-    tiempoOracion: 10000,
-    tiempoFeedback: 200,
-    autoOcultarOracion: true
-};
-
 function mostrarMisterio(diaId, numeroMisterio) {
     traza("Mostrando misterio " + numeroMisterio + " del día " + diaId);
     
@@ -244,13 +255,13 @@ function mostrarMisterio(diaId, numeroMisterio) {
     let imagenesSantoRosario = null;
     
     // Cargar las imágenes alternativas según el tipo de misterio
-    fetch('Imagenes-Santo_Rosario.json')
-        .then(response => response.json())
-        .then(data => {
-            const tipoMisterio = tipo + "s"; // Convertir "Gozoso" a "Gozosos", etc.
-            imagenesSantoRosario = data[tipoMisterio].imagenes;
-            
-        });
+ //   fetch('Imagenes-Santo_Rosario.json')
+ //       .then(response => response.json())
+ //       .then(data => {
+ //           const tipoMisterio = tipo + "s"; // Convertir "Gozoso" a "Gozosos", etc.
+ //           imagenesSantoRosario = data[tipoMisterio].imagenes;
+ //            
+ //       });
     
     // Separar autor y obra
     const [autor, obra] = imagen.autor_obra.split(',').map(s => s.trim());
@@ -694,6 +705,11 @@ function mostrarConfiguracion() {
                         Auto-ocultar oración
                     </label>
                 </div>
+                <div class="config-item">
+                    <label for="maxTrazas">Máximo número de trazas:</label>
+                    <input type="number" id="maxTrazas" min="10" max="1000" 
+                        value="${configuracion.maxTrazas}">
+                </div>
                 <button class="config-guardar" onclick="guardarConfiguracion()">Guardar</button>
             </div>
         </div>
@@ -717,9 +733,16 @@ function mostrarConfiguracion() {
     window.guardarConfiguracion = function() {
         const tiempoOracion = document.getElementById('tiempoOracion').value;
         const autoOcultar = document.getElementById('autoOcultarOracion').checked;
+        const maxTrazas = document.getElementById('maxTrazas').value;
         
         configuracion.tiempoOracion = tiempoOracion * 1000;
         configuracion.autoOcultarOracion = autoOcultar;
+        configuracion.maxTrazas = parseInt(maxTrazas);
+        
+        //Ajustar el historial al nuevo límite si es necesario
+        if (historialTrazas.length > configuracion.maxTrazas) {
+            historialTrazas = historialTrazas.slice(-configuracion.maxTrazas);
+        }
         
         cerrarConfiguracion();
         traza("Configuración guardada");
