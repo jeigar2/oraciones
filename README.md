@@ -26,6 +26,12 @@ HTML que tiene las oraciones, y se pueden seguir con el cursor.
   - Si pincha sobre un tipo de misterio, se elimna el tipo de misterio con sus 5 misterios
   - Si pincha sobre un misterio, se muestra el misterio en un bocadillo con una imagen, el titulo del misterio y el pasaje evangélico y una breve meditación
   - El bocadillo tiene un botón para cerrar y otro para volver al misterio anterior o siguiente si hay alguno
+- v3.0
+  - Se puede usar el teclado para mostrar la ayuda
+  - Se puede usar el teclado para navegar por los misterios de cada día de la semana
+  - Se puede usar el teclado para avanzar y retroceder por el rezo del Padre Nuestro y llos Ave María
+  - Se puede usar el teclado para mostrar el historial de eventos
+  - Se puede usar el teclado para mostrar las imágenes alternativas (PTE)
   
 ## Letanías lauretanas
 
