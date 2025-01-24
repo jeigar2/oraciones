@@ -42,6 +42,10 @@ HTML que tiene las oraciones, y se pueden seguir con el cursor.
     - auto-ocultar oración
     - maxTrazas
   
+- TODO:
+  - Añadir el audio de las oraciones
+  - Obtener otro juego de imagenes para los misterios del Santo Rosario [aqui](https://cofradiarosario.net/misterios.htm)
+
 ## Letanías lauretanas
 
 - v1.0
