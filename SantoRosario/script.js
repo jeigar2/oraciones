@@ -262,7 +262,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
         'M': { nombre: 'Martes', tipo: 'Doloroso' },
         'X': { nombre: 'Miercoles', tipo: 'Glorioso' },
         'J': { nombre: 'Jueves', tipo: 'Luminoso' },
-        'V': { nombre: 'Doloroso', tipo: 'Doloroso' },
+        'V': { nombre: 'Viernes', tipo: 'Doloroso' },
         'S': { nombre: 'Sabado', tipo: 'Gozoso' },
         'D': { nombre: 'Domingo', tipo: 'Glorioso' }
     };
