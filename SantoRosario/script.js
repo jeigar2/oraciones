@@ -189,6 +189,31 @@ function toggleVisibility(parentId) {
                 //const pathJueves1 = document.getElementById('PJ1');
                 if (pathJueves) pathJueves.setAttribute('visibility', 'visible');
                 //if (pathJueves1) pathJueves1.setAttribute('visibility', 'visible');
+            } else if (currentDay === "Jueves") {
+                // Mostrar solo el jueves
+                const elements = [
+                    juevesRect,
+                    document.getElementById("J"),
+                    document.getElementById("TJ"),
+                    document.getElementById("PJ")
+                ];
+                
+                // Añadir los misterios del día jueves
+                for (let i = 1; i <= 5; i++) {
+                    elements.push(
+                        ...document.querySelectorAll(`#RJ${i}`),
+                        ...document.querySelectorAll(`#TJ${i}`),
+                        ...document.querySelectorAll(`#PJ${i}`)
+                    );
+                }
+
+                elements.forEach(element => {
+                    if (element) {
+                        //element.removeAttribute('transform');
+                        element.setAttribute('visibility', 'visible');
+                    }
+                });
+
             }
             
             traza("Mostrando misterios del " + currentDay);
@@ -230,7 +255,7 @@ function toggleVisibility(parentId) {
 }
 
 
-// Tomada las metidaciones por formulario de esta 
+// Tomada las meditaciones por formulario de esta 
 // url https://contemplativos.com/espiritualidad/oracion/el-rosario-meditado/
 const formularios = {
   1: formulario1,
