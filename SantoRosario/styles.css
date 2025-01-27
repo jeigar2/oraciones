@@ -188,6 +188,15 @@ button {
     stroke: #ff6600;
 }
 
+.bola-jaculatoria {
+    fill: #8ada09cb;
+}
+
+.bola-jaculatoria.activa {
+    stroke: #0d3301;
+}
+
+
 .btn-rezar {
     background: none;
     border: none;

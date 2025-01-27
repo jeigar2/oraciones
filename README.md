@@ -1,5 +1,8 @@
 # oraciones
 
+- v2.2.1
+  - Santo Rosario agrega multiidoma (ES Español, IT Italiano, LA Latin) para las oraciones del "Padre Nuestro", "Ave María" y "Gloria"
+
 - v2.2.0
   - Se ha añadido el menú principal
 
@@ -41,7 +44,9 @@ HTML que tiene las oraciones, y se pueden seguir con el cursor.
     - tiempo de oración
     - auto-ocultar oración
     - maxTrazas
-  
+- v3.2
+  - Se agrega multiidoma para las oraciones del "Padre Nuestro", "Ave María" y "Gloria", los idiomas que tiene preconfigurados son Español, Italiano y Latín
+
 - TODO:
   - Añadir el audio de las oraciones
   - Obtener otro juego de imagenes para los misterios del Santo Rosario [aqui](https://cofradiarosario.net/misterios.htm)

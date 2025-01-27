@@ -4,7 +4,7 @@ let configuracion = {
     autoOcultarOracion: true,
     maxTrazas: 100,
     idiomaSeleccionado: 'ES',
-    version: '3.1'
+    version: '3.2'
 };
 
 // Variable global para almacenar el historial de trazas
@@ -377,8 +377,9 @@ function mostrarMisterio(diaId, numeroMisterio) {
                 <svg width="480" height="40" viewBox="0 0 480 40">
                     <circle class="bola bola-padre" cx="25" cy="20" r="13" data-index="0"/>
                     ${Array(10).fill('').map((_, i) => 
-                        `<circle class="bola bola-ave" cx="${(i + 2) * 40 + 5}" cy="20" r="10"/>`
+                        `<circle class="bola bola-ave" cx="${(i + 2) * 38 + 4}" cy="20" r="10"/>`
                     ).join('')}
+                    <circle class="bola bola-jaculatoria" cx="${12 * 38 + 4}" cy="20" r="8"/>
                 </svg>
                 <button class="btn-rezar" id="btn-avanzar">&gt;</button>
             </div>
@@ -403,7 +404,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
     function manejarTeclado(e) {
         if (e.key === 'ArrowRight') {
             // Flecha derecha: avanzar bola
-            if (posicionActual < 10) {
+            if (posicionActual < 11) {
                 posicionActual++;
                 actualizarBolas();
                 traza("Avanzar misterio");
@@ -462,16 +463,26 @@ function mostrarMisterio(diaId, numeroMisterio) {
             bola.classList.remove('activa');
             if (index <= posicionActual) {
                 bola.classList.add('activa');
-                // Si es la primera activación de una bola, mostrar la oración correspondiente
                 if (index === posicionActual) {
-                    mostrarOracion(index === 0 ? 'padrenuestro' : 'avemaria');
+                    switch (index) {
+                        case 0:
+                            mostrarOracion('padrenuestro');
+                            break;
+                        case 11:
+                            mostrarOracion('gloria');
+                            break;
+                        default:
+                            mostrarOracion('avemaria');
+                            break;
+                    }
+                    //mostrarOracion(index === 0 ? 'padrenuestro' : 'avemaria');
                 }
             }
         });
 
         // Actualizar botones
         btnRetroceder.disabled = posicionActual < 0;
-        btnAvanzar.disabled = posicionActual >= 10;
+        btnAvanzar.disabled = posicionActual >= 11; // index 11 es la jaculatoria final
     }
     
     // Función para mostrar la oración
