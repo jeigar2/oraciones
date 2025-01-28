@@ -135,14 +135,41 @@
         color: #000;
       }
 
+      .controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+      }
+      
+      .controls label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+      }
+      
+      .controls input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+      }
+
     </style>
   </head>
   <body>
     <h1>Coronilla de la Divina Misericordia</h1>
-    <div style="text-align: right; margin-right: 20px;">
-        <label style="font-size: 20px;">
+    <div class="controls">
+        <label>
             <input type="checkbox" id="audioEnabled" checked> 
             Reproducir Audio
+        </label>
+        <label>
+            <input type="checkbox" id="autoplayEnabled"> 
+            Reproducción Automática
         </label>
     </div>
     
@@ -151,12 +178,7 @@
             <div>
                 <div onclick="ocultar(this)" >
                     <h2>Petición inicial</h2>
-                    <p onmouseenter="mostrarTexto(1, this)", onmouseout="ocultarTexto()">En esta coronilla, pidamos por todas las almitas que estan yendo a la presencia del Señor que el los reciba con sus brazos amorosos,</p>
-                    <p onmouseenter="mostrarTexto(0, this)", onmouseout="ocultarTexto()">pidamos por todos los enfermitos, agonizantes, caminantes, navegantes, desterrados, perseguidos, encarcelados,</p>
-                    <p onmouseenter="mostrarTexto(0, this)", onmouseout="ocultarTexto()">por los sacerdotes y consagrados, por las vocaciones, por los que estan solos y no hay quien se acuerde de ellos,</p>
-                    <p onmouseenter="mostrarTexto(0, this)", onmouseout="ocultarTexto()">por las mujeres embarazadas especialmente por las que están tentadas con el aborto, las que ya han abortado y todos los que ayudaron en el proceso para que se reconcilien con Dios</p>
-                    <p onmouseenter="mostrarTexto(0, this)", onmouseout="ocultarTexto()">pidamos tambien por los matrimonios que está pasando por dificultades, por nuestras necesidades que el Señor nos muestre su rostro, tenga misericordia de nosotros y nos de la vida eterna.</p>
-                    <p onmouseenter="mostrarTexto(0, this)", onmouseout="ocultarTexto()">amén</p>
+                    <p onmouseenter="mostrarTexto(1, this)", onmouseout="ocultarTexto()">En esta coronilla, pidamos por todas las almitas que estan yendo a la presencia del Señor que el los reciba con sus brazos amorosos, pidamos por todos los enfermitos, agonizantes, caminantes, navegantes, desterrados, perseguidos, encarcelados, por los sacerdotes y consagrados, por las vocaciones, por los que estan solos y no hay quien se acuerde de ellos, por las mujeres embarazadas especialmente por las que están tentadas con el aborto, las que ya han abortado y todos los que ayudaron en el proceso para que se reconcilien con Dios pidamos tambien por los matrimonios que está pasando por dificultades, por nuestras necesidades que el Señor nos muestre su rostro, tenga misericordia de nosotros y nos de la vida eterna.<br> Amén</p>
                 </div>
                 <hr>
                 <div onclick="ocultar(this)">
@@ -164,7 +186,7 @@
                     <p onmouseenter="mostrarTexto(2, this)" onmouseout="ocultarTexto()">Expiraste, Jesús, pero la fuente de vida brotó para las almas y el mar de misericordia se abrió para el mundo entero.</p>
                     <p onmouseenter="mostrarTexto(3, this)" onmouseout="ocultarTexto()">Oh fuente de vida, insondable Misericordia Divina, abarca al mundo entero y derrámate sobre nosotros.</p>
                     <hr>
-                    <p onmouseenter="mostrarTexto(4, this)" onmouseout="ocultarTexto()">Oh Sangre y Agua que brotaste del Corazón de Jesús, como una Fuente de Misericordia para nosotros</p>
+                    <p onmouseenter="mostrarTexto(4, this, 'Jesús, en tí confío')" onmouseout="ocultarTexto()">Oh Sangre y Agua que brotaste del Corazón de Jesús, como una Fuente de Misericordia para nosotros</p>
                 </div>
                 <ul>
                     <li onclick="ocultar(this)" onmouseenter="mostrarTexto(5, 'Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo.', 'Danos hoy nuestro pan de cada día; perdona nuestras ofensas como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Padre Nuestro</li>
@@ -653,5 +675,104 @@
         }
         return null; // sin audio
     }
+
+    let audioQueue = [];
+    let isPlaying = false;
+    
+    // Función para reproducir la cola de audio
+    async function playAudioQueue() {
+        if (!isPlaying || audioQueue.length === 0) return;
+        
+        const audioFile = audioQueue.shift();
+        const audio = new Audio(audioFile);
+        
+        audio.onended = () => {
+            if (isPlaying && audioQueue.length > 0) {
+                playAudioQueue();
+            } else {
+                isPlaying = false;
+            }
+        };
+        
+        try {
+            await audio.play();
+        } catch (error) {
+            console.error('Error reproduciendo audio:', error);
+            isPlaying = false;
+        }
+    }
+    
+    // Función para detener la reproducción
+    function stopAudioQueue() {
+        isPlaying = false;
+        audioQueue = [];
+    }
+
+    // Añadir event listener para las teclas
+    document.addEventListener('keydown', function(event) {
+        const autoplayEnabled = document.getElementById('autoplayEnabled').checked;
+        const audioEnabled = document.getElementById('audioEnabled').checked;
+        const parrafos = document.querySelectorAll('p');
+        const parrafosVisibles = Array.from(parrafos).filter(p => p.style.display !== 'none');
+        const primerParrafoVisible = parrafosVisibles[0];
+        
+        // Detener reproducción con ESC
+        if (event.key === 'Escape') {
+            stopAudioQueue();
+            return;
+        }
+        
+        // Espacio o flecha abajo
+        if (event.code === 'Space' || event.code === 'ArrowDown') {
+            event.preventDefault(); // Prevenir scroll
+            
+            // Si está activa la reproducción automática
+            if (autoplayEnabled && audioEnabled) {
+                // Recopilar todos los audios restantes
+                audioQueue = [];
+                let collecting = false;
+                
+                parrafosVisibles.forEach(p => {
+                    if (!collecting && p === ultimoParrafoMostrado) {
+                        collecting = true;
+                    }
+                    if (collecting) {
+                        const audioFile = getAudioFile(p.textContent);
+                        if (audioFile) {
+                            audioQueue.push(audioFile);
+                        }
+                    }
+                });
+                
+                if (!isPlaying && audioQueue.length > 0) {
+                    isPlaying = true;
+                    playAudioQueue();
+                }
+            }
+            
+            if (!ultimoParrafoMostrado && primerParrafoVisible) {
+                // Primera pulsación: simular mouseenter
+                const mouseEnterEvent = new MouseEvent('mouseenter');
+                primerParrafoVisible.dispatchEvent(mouseEnterEvent);
+                ultimoParrafoMostrado = primerParrafoVisible;
+            } 
+            else if (ultimoParrafoMostrado) {
+                // Segunda pulsación: simular click, mouseout y mouseenter del siguiente
+                const clickEvent = new MouseEvent('click');
+                const mouseOutEvent = new MouseEvent('mouseout');
+                ultimoParrafoMostrado.dispatchEvent(clickEvent);
+                ultimoParrafoMostrado.dispatchEvent(mouseOutEvent);
+                
+                const siguienteParrafo = parrafosVisibles[1];
+                if (siguienteParrafo) {
+                    const mouseEnterEvent = new MouseEvent('mouseenter');
+                    siguienteParrafo.dispatchEvent(mouseEnterEvent);
+                    ultimoParrafoMostrado = siguienteParrafo;
+                } else {
+                    ultimoParrafoMostrado = null;
+                }
+            }
+        }
+    });
   </script>
 </html>
