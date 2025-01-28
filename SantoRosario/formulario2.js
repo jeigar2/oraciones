@@ -2,7 +2,7 @@ const formulario2 = {
     Lunes: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "/imagenes/natividad_rosario-09-610x427.jpg",
+            src: "../imagenes/natividad_rosario-09-610x427.jpg",
             autor_obra: "Caravaggio, Natividad"
         },
         misterios: [
@@ -41,7 +41,7 @@ const formulario2 = {
     Martes: {
         tipo: "Misterios Dolorosos",
         imagen: {
-            src: "/imagenes/jes%C3%BAs_crucificado_rosario-10.jpg",
+            src: "../imagenes/jes%C3%BAs_crucificado_rosario-10.jpg",
             autor_obra: "Velázquez, Cristo crucificado (detalle)"
         },
         misterios: [
@@ -80,7 +80,7 @@ const formulario2 = {
     Miercoles: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "/imagenes/ascensi%C3%B3n_cristo_rosario-11.jpg",
+            src: "../imagenes/ascensi%C3%B3n_cristo_rosario-11.jpg",
             autor_obra: "Perugino, Ascensión de Cristo"
         },
         misterios: [
@@ -119,7 +119,7 @@ const formulario2 = {
     Jueves: {
         tipo: "Misterios Luminosos",
         imagen: {
-            src: "/imagenes/bodas_can%C3%A1_rosario-12.jpg",
+            src: "../imagenes/bodas_can%C3%A1_rosario-12.jpg",
             autor_obra: "Gerard David, Las bodas de Caná"
         },
         misterios: [
@@ -158,7 +158,7 @@ const formulario2 = {
     Viernes: {
         tipo: "Misterios Dolorosos",
         imagen: {
-            src: "/imagenes/jes%C3%BAs_coronado_espinas_rosario-13.jpg",
+            src: "../imagenes/jes%C3%BAs_coronado_espinas_rosario-13.jpg",
             autor_obra: "Tiziano, La Coronación de Espinas"
         },
         misterios: [
@@ -197,7 +197,7 @@ const formulario2 = {
     Sabado: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "/imagenes/nacimiento_rosario-14.jpg",
+            src: "../imagenes/nacimiento_rosario-14.jpg",
             autor_obra: "Velázquez, Nacimiento de Jesús"
         },
         misterios: [
@@ -236,7 +236,7 @@ const formulario2 = {
     Domingo: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "/imagenes/pentecost%C3%A9s_rosario-15-610x450.jpg",
+            src: "../imagenes/pentecost%C3%A9s_rosario-15-610x450.jpg",
             autor_obra: "El Greco, Pentecostés (detalle)"
         },
         misterios: [
