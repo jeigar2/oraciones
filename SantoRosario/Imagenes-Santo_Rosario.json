@@ -2,51 +2,51 @@
     "Gozosos": {
         "imagenes": [
             [
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/rosario-lunes-sabado-primer-misterio-gozoso-encarnacion-hijo-de-dios.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/segundo-misterio-gozoso-lunes-sabado-visitacion-maria-isabel.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/tercer-misterio-gozoso-nacimiento-jesus-portal-belen.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}, 
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/cuarto-misterio-gozoso-presentacion-jesus-en-el-templo.png.webp","autor":"", "titulo":"", "nota":""},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/quinto-misterio-gozoso-jesus-perdido-hallado-en-el-templo.png.webp","autor":"", "titulo":"", "nota":""}
+                {"url":"/imagenes/desdelafe/rosario-lunes-sabado-primer-misterio-gozoso-encarnacion-hijo-de-dios.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/segundo-misterio-gozoso-lunes-sabado-visitacion-maria-isabel.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/tercer-misterio-gozoso-nacimiento-jesus-portal-belen.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}, 
+                {"url":"/imagenes/desdelafe/cuarto-misterio-gozoso-presentacion-jesus-en-el-templo.png.webp","autor":"", "titulo":"", "nota":""},
+                {"url":"/imagenes/desdelafe/quinto-misterio-gozoso-jesus-perdido-hallado-en-el-templo.png.webp","autor":"", "titulo":"", "nota":""}
             ],
             [
-                {"url":"https://catolicismodigital.com/wp-content/uploads/2021/06/fra-angelico.jpg","autor":"", "titulo":"", "nota":""},
-                {"url":"https://catolicismodigital.com/wp-content/uploads/2021/07/la-visitacion.jpg","autor":"", "titulo":"", "nota":""},
-                {"url":"https://catolicismodigital.com/wp-content/uploads/2021/10/el-nacimiento-de-jesus.jpg","autor":"", "titulo":"", "nota":""},
-                {"url":"https://catolicismodigital.com/wp-content/uploads/2022/01/la-presentacion-de-jesus-en-el-templo.jpg","autor":"", "titulo":"", "nota":""},
-                {"url":"https://catolicismodigital.com/wp-content/uploads/2022/01/jesus-perdido-y-hallado-en-el-templo.jpg","autor":"", "titulo":"", "nota":""}
+                {"url":"/imagenes/catolicismodigital/fra-angelico.jpg","autor":"", "titulo":"", "nota":""},
+                {"url":"/imagenes/catolicismodigital/la-visitacion.jpg","autor":"", "titulo":"", "nota":""},
+                {"url":"/imagenes/catolicismodigital/el-nacimiento-de-jesus.jpg","autor":"", "titulo":"", "nota":""},
+                {"url":"/imagenes/catolicismodigital/la-presentacion-de-jesus-en-el-templo.jpg","autor":"", "titulo":"", "nota":""},
+                {"url":"/imagenes/catolicismodigital/jesus-perdido-y-hallado-en-el-templo.jpg","autor":"", "titulo":"", "nota":""}
             ]
         ]
     },
     "Dolores": {
         "imagenes": [
             [
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/primer-misterio-doloroso-jesus-en-el-huerto.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/segundo-misterio-doloroso-flagelacion-del-senor.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/tercer-misterio-doloroso-coronacion-espinas.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/cuarto-misterio-glorioso-jesus-con-la-cruz-a-cuestas.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/quinto-misterio-doloroso-la-crucifixion-de-jesus.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}
+                {"url":"/imagenes/desdelafe/primer-misterio-doloroso-jesus-en-el-huerto.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/segundo-misterio-doloroso-flagelacion-del-senor.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/tercer-misterio-doloroso-coronacion-espinas.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/cuarto-misterio-glorioso-jesus-con-la-cruz-a-cuestas.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/quinto-misterio-doloroso-la-crucifixion-de-jesus.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}
             ]
         ]
     }, 
     "Luminosos": {
         "imagenes": [
             [
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/primer-misterio-luminoso-bautismo-en-el-jordan.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/segundo-misterio-luminoso-bodas-de-cana.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/tercer-misterio-luminoso-anuncio-del-reino-de-dios.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/cuarto-misterio-luminoso-la-transfiguracion.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/quinto-misterio-luminoso-institucion-de-la-eucaristia.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}     
+                {"url":"/imagenes/desdelafe/primer-misterio-luminoso-bautismo-en-el-jordan.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/segundo-misterio-luminoso-bodas-de-cana.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/tercer-misterio-luminoso-anuncio-del-reino-de-dios.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/cuarto-misterio-luminoso-la-transfiguracion.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/quinto-misterio-luminoso-institucion-de-la-eucaristia.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}     
             ]
         ]
     },
     "Gloriosos": {
         "imagenes": [
             [
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/primer-misterio-glorioso-resurreccion-senor-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/segundo-misterio-glorioso-ascension-senor-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/tercer-misterio-glorioso-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/cuarto-misterio-glorioso-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
-                {"url":"https://desdelafe.mx/wp-content/uploads/2024/06/quinti-misterio-glorioso-rosario-miercoles-domingo.jpeg.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}
+                {"url":"/imagenes/desdelafe/primer-misterio-glorioso-resurreccion-senor-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/segundo-misterio-glorioso-ascension-senor-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/tercer-misterio-glorioso-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/cuarto-misterio-glorioso-rosario-miercoles-domingo.png.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"},
+                {"url":"/imagenes/desdelafe/quinti-misterio-glorioso-rosario-miercoles-domingo.jpeg.webp","autor":"", "titulo":"", "nota":"Ilustración: Desde la fe"}
             ]
         ]
     }

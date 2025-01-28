@@ -2,7 +2,7 @@ const formulario1 = {
     Lunes: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "imagenes/rosario_anunciaci%C3%B3n-01.jpg",
+            src: "/imagenes/rosario_anunciaci%C3%B3n-01.jpg",
             autor_obra: "Fra Angelico, La Anunciación"
         },
         misterios: [
@@ -41,7 +41,7 @@ const formulario1 = {
     Martes: {
         tipo: "Misterios Dolorosos",
         imagen: {
-            src: "imagenes/jes%C3%BAs_huerto_getseman%C3%AD_rosario-03.jpg",
+            src: "/imagenes/jes%C3%BAs_huerto_getseman%C3%AD_rosario-03.jpg",
             autor_obra: "Vaccaro, Jesús en el huerto de Getsemaní"
         },
         misterios: [
@@ -80,7 +80,7 @@ const formulario1 = {
     Miercoles: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "imagenes/resurrecci%C3%B3n_rosario.jpg",
+            src: "/imagenes/resurrecci%C3%B3n_rosario.jpg",
             autor_obra: "Rafaellino del Garbo, La resurrección de Cristo"
         },
         misterios: [
@@ -119,7 +119,7 @@ const formulario1 = {
     Jueves: {
         tipo: "Misterios Luminosos",
         imagen: {
-            src: "imagenes/bautismo_se%C3%B1or_rosario-05.jpg",
+            src: "/imagenes/bautismo_se%C3%B1or_rosario-05.jpg",
             autor_obra: "Beisaga Governia, Bautismo de Jesús"
         },
         misterios: [
@@ -158,7 +158,7 @@ const formulario1 = {
     Viernes: {
         tipo: "Misterios Dolorosos",
         imagen: {   
-            src: "imagenes/flagelaci%C3%B3n_se%C3%B1or_rosario-06.jpg",
+            src: "/imagenes/flagelaci%C3%B3n_se%C3%B1or_rosario-06.jpg",
             autor_obra: "Bouguereau, La flagelación de Jesús"
         },
         misterios: [
@@ -197,7 +197,7 @@ const formulario1 = {
     Sabado: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "imagenes/visitaci%C3%B3n_mar%C3%ADa_prima_isabel_rosario-07.jpg",
+            src: "/imagenes/visitaci%C3%B3n_mar%C3%ADa_prima_isabel_rosario-07.jpg",
             autor_obra: "Ghirlandaio, La Visitación"
         },
         misterios: [
@@ -236,7 +236,7 @@ const formulario1 = {
     Domingo: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "imagenes/resurrecci%C3%B3n_cristo_rosario-08.jpg",
+            src: "/imagenes/resurrecci%C3%B3n_cristo_rosario-08.jpg",
             autor_obra: "Tintoretto, La resurrección de Cristo"
         },
         misterios: [

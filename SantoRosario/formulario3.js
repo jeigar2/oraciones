@@ -2,7 +2,7 @@ const formulario3 = {
     Lunes: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "imagenes\presentaci%C3%B3n_jes%C3%BAs_templo-16-610x318.jpg",
+            src: "/imagenes\presentaci%C3%B3n_jes%C3%BAs_templo-16-610x318.jpg",
             autor_obra: "Rafael, Presentación de Jesús en el Templo"
         },
         misterios: [
@@ -41,7 +41,7 @@ const formulario3 = {
     Martes: {
         tipo: "Misterios Dolorosos",
         imagen: {
-            src: "imagenes\jes%C3%BAs_carga_cruz_rosario-17-610x337.jpg",
+            src: "/imagenes\jes%C3%BAs_carga_cruz_rosario-17-610x337.jpg",
             autor_obra: "Sebastiano del Piombo, Jesús con la cruz a cuestas (detalle)"
         },
         misterios: [
@@ -80,7 +80,7 @@ const formulario3 = {
     Miercoles: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "imagenes\asunci%C3%B3n_maria_cielo_rosario-18.jpg",
+            src: "/imagenes\asunci%C3%B3n_maria_cielo_rosario-18.jpg",
             autor_obra: "Carracci, Asunción de María al cielo"
         },
         misterios: [
@@ -119,7 +119,7 @@ const formulario3 = {
     Jueves: {
         tipo: "Misterios Luminosos",
         imagen: {
-            src: "imagenes\%C3%BAltima_cena_rosario-19-610x287.jpg",
+            src: "/imagenes\%C3%BAltima_cena_rosario-19-610x287.jpg",
             autor_obra: "Leonardo da Vinci, La última Cena"
         },
         misterios: [
@@ -158,7 +158,7 @@ const formulario3 = {
     Viernes: {
         tipo: "Misterios Dolorosos",
         imagen: {
-            src: "imagenes\crucifixi%C3%B3n_muerte_se%C3%B1or_rosario-20-610x429.jpg",
+            src: "/imagenes\crucifixi%C3%B3n_muerte_se%C3%B1or_rosario-20-610x429.jpg",
             autor_obra: "Van der Weyden, Tríptico del Calvario"
         },
         misterios: [
@@ -197,7 +197,7 @@ const formulario3 = {
     Sabado: {
         tipo: "Misterios Gozosos",
         imagen: {
-            src: "imagenes\jes%C3%BAs_templo_doctores_rosario-21-610x336.jpg",
+            src: "/imagenes\jes%C3%BAs_templo_doctores_rosario-21-610x336.jpg",
             autor_obra: "Verónés, Jesús en templo, con los doctores"
         },
         misterios: [
@@ -236,7 +236,7 @@ const formulario3 = {
     Domingo: {
         tipo: "Misterios Gloriosos",
         imagen: {
-            src: "imagenes\coronaci%C3%B3n_mar%C3%AFa_reina_rosario-22.jpg",
+            src: "/imagenes\coronaci%C3%B3n_mar%C3%AFa_reina_rosario-22.jpg",
             autor_obra: "Masip, coronación de la Virgen (detalle)"
         },
         misterios: [
