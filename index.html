@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oraciones Católicas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -33,9 +34,10 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            max-width: 800px;
+            min-width: 100px;
             width: 100%;
             padding: 20px;
+            margin: 20px 0;
         }
 
         .menu-item {
@@ -95,11 +97,30 @@
             text-align: center;
             font-size: 0.9em;
         }
+
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item h3 {
+                font-size: 1.5em;
+            }
+
+            .menu-item p {
+                font-size: 1em;
+            }
+
+            .menu-item i {
+                font-size: 56px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="titulo">
-        <h1>Oraciones Católicas <span class="version">v.3.1</span></h1>
+        <h1>Oraciones Católicas <span id="version" class="version">v.3.1</span></h1>
     </div>
 
     <div class="menu-grid">
@@ -136,6 +157,7 @@
         <p>© 2024 Oraciones Católicas - Desarrollado con ❤️ para mayor gloria de Dios</p>
     </footer>
 
+    <script src="menu.js"></script>
     <script>
         // Manejar atajos de teclado
         document.addEventListener('keydown', (e) => {
@@ -155,6 +177,12 @@
                         break;
                 }
             }
+        });
+        //recupera la version del archivo que está en el menú
+        document.getElementById('version').innerText = 'v.' + menuConfig.version;
+        // Eliminar el menú después de que se haya cargado, porque en este punto ya no se necesita
+        document.addEventListener('DOMContentLoaded', () => {
+            deleteMenu();
         });
     </script>
 </body>

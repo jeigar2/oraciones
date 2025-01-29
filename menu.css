@@ -106,3 +106,36 @@
     padding: 2px 6px;
     border-radius: 4px;
 } 
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-link {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        margin-right: 0;
+    }
+
+    .menu-link.active {
+        background-color: #e9ecef;
+        font-weight: bold;
+    }
+
+    .tecla {
+        font-size: 1em;
+        padding: 4px 8px;
+    }
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .menu-link {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    .tecla {
+        font-size: 1.2em;
+        padding: 6px 10px;
+    }
+}

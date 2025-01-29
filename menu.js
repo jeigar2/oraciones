@@ -119,3 +119,18 @@ function toggleMenu() {
 
 // Crear el menú cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', createMenu); 
+
+// eliminar menu
+function deleteMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuSidebar = document.querySelector('.menu-sidebar');
+
+    menuToggle.remove();
+    menuOverlay.remove();
+    menuSidebar.remove();
+    menuSidebar.innerHTML = '';
+    menuSidebar.style.display = 'none';
+    menuToggle.style.display = 'none';
+    menuOverlay.style.display = 'none';
+}
