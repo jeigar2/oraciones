@@ -120,6 +120,13 @@ function mostrarMisterio(diaId, numeroMisterio) {
         <div class="navegacion-misterios">
             ${botonesNavegacion}
         </div>
+        <div class="touch-areas">
+            <div class="touch-area top"></div>
+            <div class="touch-area bottom"></div>
+            <div class="touch-area left"></div>
+            <div class="touch-area right"></div>
+            <div class="touch-area center"></div>
+        </div>
     `;
     
     // Asegurarnos de que todos los elementos dentro de la capa sean visibles
@@ -326,6 +333,64 @@ function mostrarMisterio(diaId, numeroMisterio) {
     // Agregar los event listeners para los eventos de toque
     capaFlotante.addEventListener('touchstart', handleTouchStart);
     capaFlotante.addEventListener('touchend', handleTouchEnd);
+
+    // Función para manejar doble toque
+    function handleDoubleTap(area) {
+        switch (area) {
+            case 'top':
+                if (numeroMisterio < 5) {
+                    mostrarMisterio(diaId, numeroMisterio + 1);
+                    traza("Avanzar misterio");
+                }
+                break;
+            case 'bottom':
+                if (numeroMisterio > 1) {
+                    mostrarMisterio(diaId, numeroMisterio - 1);
+                    traza("Retroceder misterio");
+                }
+                break;
+            case 'left':
+                if (posicionActual >= 0) {
+                    posicionActual--;
+                    actualizarBolas();
+                    traza("Retroceder bola");
+                }
+                break;
+            case 'right':
+                if (posicionActual < 11) {
+                    posicionActual++;
+                    actualizarBolas();
+                    traza("Avanzar bola");
+                }
+                break;
+            case 'center':
+                // Acción para el centro (puede ser personalizada)
+                break;
+        }
+    }
+
+    // Variables para manejar el doble toque
+    let lastTap = 0;
+
+    // Función para manejar el toque
+    function handleTouch(e) {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        if (tapLength < 500 && tapLength > 0) {
+            const area = e.target.classList.contains('top') ? 'top' :
+                         e.target.classList.contains('bottom') ? 'bottom' :
+                         e.target.classList.contains('left') ? 'left' :
+                         e.target.classList.contains('right') ? 'right' :
+                         'center';
+            handleDoubleTap(area);
+        }
+        lastTap = currentTime;
+    }
+
+    // Agregar los event listeners para las áreas de toque
+    capaFlotante.querySelectorAll('.touch-area').forEach(area => {
+        area.addEventListener('touchend', handleTouch);
+    });
 
     document.body.appendChild(capaFlotante);
 }
