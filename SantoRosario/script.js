@@ -266,6 +266,66 @@ function mostrarMisterio(diaId, numeroMisterio) {
         }
     });
     
+    // Variables para manejar los eventos de deslizamiento
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    // Función para manejar el inicio del toque
+    function handleTouchStart(e) {
+        const touch = e.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+    }
+
+    // Función para manejar el final del toque
+    function handleTouchEnd(e) {
+        const touch = e.changedTouches[0];
+        const touchEndX = touch.clientX;
+        const touchEndY = touch.clientY;
+
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        // Determinar la dirección del deslizamiento
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Deslizamiento horizontal
+            if (deltaX > 0) {
+                // Deslizar a la derecha: retroceder bola
+                if (posicionActual >= 0) {
+                    posicionActual--;
+                    actualizarBolas();
+                    traza("Retroceder bola");
+                }
+            } else {
+                // Deslizar a la izquierda: avanzar bola
+                if (posicionActual < 11) {
+                    posicionActual++;
+                    actualizarBolas();
+                    traza("Avanzar bola");
+                }
+            }
+        } else {
+            // Deslizamiento vertical
+            if (deltaY > 0) {
+                // Deslizar hacia abajo: retroceder misterio
+                if (numeroMisterio > 1) {
+                    mostrarMisterio(diaId, numeroMisterio - 1);
+                    traza("Retroceder misterio");
+                }
+            } else {
+                // Deslizar hacia arriba: avanzar misterio
+                if (numeroMisterio < 5) {
+                    mostrarMisterio(diaId, numeroMisterio + 1);
+                    traza("Avanzar misterio");
+                }
+            }
+        }
+    }
+
+    // Agregar los event listeners para los eventos de toque
+    capaFlotante.addEventListener('touchstart', handleTouchStart);
+    capaFlotante.addEventListener('touchend', handleTouchEnd);
+
     document.body.appendChild(capaFlotante);
 }
 
