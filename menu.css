@@ -174,7 +174,7 @@
 /* Media queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .menu-toggle {
-        font-size: 36px;
+        font-size: 42px;
         width: 60px;
         height: 60px;
     }

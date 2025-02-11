@@ -387,3 +387,53 @@ button {
     font-weight: normal;
     margin-left: 10px;
 }
+
+/* Estilos generales para el SVG y los textos del Santo Rosario */
+svg text {
+    font-size: 14px;
+}
+
+.contenido-misterio p,
+.navegacion-misterios button,
+.btn-rezar {
+    font-size: 14px;
+}
+
+/* Media queries para pantallas pequeñas en modo vertical */
+@media (max-width: 768px) and (orientation: portrait) {
+    svg text {
+        font-size: 18px;
+    }
+
+    .contenido-misterio p,
+    .navegacion-misterios button,
+    .btn-rezar {
+        font-size: 18px;
+    }
+}
+
+/* Media queries para pantallas pequeñas en modo horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+    svg text {
+        font-size: 16px;
+    }
+
+    .contenido-misterio p,
+    .navegacion-misterios button,
+    .btn-rezar {
+        font-size: 16px;
+    }
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    svg text {
+        font-size: 20px;
+    }
+
+    .contenido-misterio p,
+    .navegacion-misterios button,
+    .btn-rezar {
+        font-size: 20px;
+    }
+}
