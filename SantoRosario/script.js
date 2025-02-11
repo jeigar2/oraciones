@@ -269,6 +269,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
     // Variables para manejar los eventos de deslizamiento
     let touchStartX = 0;
     let touchStartY = 0;
+    const umbralDeslizamiento = 30; // Umbral para considerar un deslizamiento
 
     // Función para manejar el inicio del toque
     function handleTouchStart(e) {
@@ -287,7 +288,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
         const deltaY = touchEndY - touchStartY;
 
         // Determinar la dirección del deslizamiento
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (Math.abs(deltaX) > umbralDeslizamiento) {
             // Deslizamiento horizontal
             if (deltaX > 0) {
                 // Deslizar a la derecha: retroceder bola
@@ -306,7 +307,7 @@ function mostrarMisterio(diaId, numeroMisterio) {
             }
         } else {
             // Deslizamiento vertical
-            if (deltaY > 0) {
+            if (Math.abs(deltaY) > umbralDeslizamiento) {
                 // Deslizar hacia abajo: retroceder misterio
                 if (numeroMisterio > 1) {
                     mostrarMisterio(diaId, numeroMisterio - 1);
