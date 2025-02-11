@@ -149,17 +149,17 @@ function toggleVisibility(parentId) {
             const currentDay = dayMap[today];
             const currentDayCode = currentDay === "Miercoles" ? "X" : currentDay.charAt(0);
             
-            // Obtener el rectángulo del día actual y del jueves
+            // Obtener el rectángulo del día actual y del lunes
             const currentDayRect = document.getElementById(currentDay);
-            const juevesRect = document.getElementById("Jueves");
+            const lunesRect = document.getElementById("Lunes");
             
-            if (currentDayRect && juevesRect && currentDay !== "Jueves") {
-                // Obtener las coordenadas del jueves
-                const juevesY = juevesRect.getAttribute('y');
+            if (currentDayRect && lunesRect && currentDay !== "Lunes") {
+                // Obtener las coordenadas del lunes
+                const lunesY = lunesRect.getAttribute('y');
                 const currentY = currentDayRect.getAttribute('y');
                 
                 // Calcular la diferencia en Y
-                const deltaY = parseFloat(juevesY) - parseFloat(currentY);
+                const deltaY = parseFloat(lunesY) - parseFloat(currentY);
                 
                 // Aplicar la transformación al día actual y sus elementos
                 const elements = [
@@ -185,26 +185,26 @@ function toggleVisibility(parentId) {
                     }
                 });
 
-                // Mostrar el path del Jueves
-                const pathJueves = document.getElementById('PJ');
-                //const pathJueves1 = document.getElementById('PJ1');
-                if (pathJueves) pathJueves.setAttribute('visibility', 'visible');
-                //if (pathJueves1) pathJueves1.setAttribute('visibility', 'visible');
-            } else if (currentDay === "Jueves") {
-                // Mostrar solo el jueves
+                // Mostrar el path del Lunes
+                const pathLunes = document.getElementById('PL');
+                //const pathLunes1 = document.getElementById('PJ1');
+                if (pathLunes) pathLunes.setAttribute('visibility', 'visible');
+                //if (pathLunes1) pathLunes1.setAttribute('visibility', 'visible');
+            } else if (currentDay === "Lunes") {
+                // Mostrar solo el lunes
                 const elements = [
-                    juevesRect,
-                    document.getElementById("J"),
-                    document.getElementById("TJ"),
-                    document.getElementById("PJ")
+                    lunesRect,
+                    document.getElementById("L"),
+                    document.getElementById("TL"),
+                    document.getElementById("PL")
                 ];
                 
-                // Añadir los misterios del día jueves
+                // Añadir los misterios del día lunes
                 for (let i = 1; i <= 5; i++) {
                     elements.push(
-                        ...document.querySelectorAll(`#RJ${i}`),
-                        ...document.querySelectorAll(`#TJ${i}`),
-                        ...document.querySelectorAll(`#PJ${i}`)
+                        ...document.querySelectorAll(`#RL${i}`),
+                        ...document.querySelectorAll(`#TL${i}`),
+                        ...document.querySelectorAll(`#PL${i}`)
                     );
                 }
 
