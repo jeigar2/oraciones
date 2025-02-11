@@ -98,6 +98,17 @@ function toggleVisibility(parentId) {
                     dayRect.removeAttribute('transform');
                 }
             });
+
+            // Restaurar posiciones originales de Santo Rosario y sus textos
+            const santoRosarioRect = document.getElementById('SantoRosario');
+            const sr1Text = document.getElementById('SR1');
+            const sr2Text = document.getElementById('SR2');
+            const pathPJ = document.getElementById('PJ');
+
+            if (santoRosarioRect) santoRosarioRect.setAttribute('y', '993.3438');
+            if (sr1Text) sr1Text.setAttribute('y', '1016.3389');
+            if (sr2Text) sr2Text.setAttribute('y', '1032.6357');
+            if (pathPJ) pathPJ.setAttribute('d', 'M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1019.6406 122,1019.6406 L132,1019.6406');
         } else {
             // Si todo está visible, mostrar solo el día actual
             const today = new Date().getDay();
@@ -185,10 +196,21 @@ function toggleVisibility(parentId) {
                     }
                 });
 
-                // Mostrar el path del Lunes
-                const pathLunes = document.getElementById('PL');
+                // Mover Santo Rosario y sus textos
+                const santoRosarioRect = document.getElementById('SantoRosario');
+                const sr1Text = document.getElementById('SR1');
+                const sr2Text = document.getElementById('SR2');
+                const pathPJ = document.getElementById('PJ');
+
+                if (santoRosarioRect) santoRosarioRect.setAttribute('y', '124.4453');
+                if (sr1Text) sr1Text.setAttribute('y', '147.4404');
+                if (sr2Text) sr2Text.setAttribute('y', '163.7373');
+                if (pathPJ) pathPJ.setAttribute('d', 'M82.377,150.7422 L92.377,150.7422 C107.377,150.7422 107.377,150.7422 122.377,150.7422 L132.377,150.7422');
+
+                // Mostrar el path del Jueves
+                const pathJueves = document.getElementById('PJ');
                 //const pathLunes1 = document.getElementById('PJ1');
-                if (pathLunes) pathLunes.setAttribute('visibility', 'visible');
+                if (pathJueves) pathJueves.setAttribute('visibility', 'visible');
                 //if (pathLunes1) pathLunes1.setAttribute('visibility', 'visible');
             } else if (currentDay === "Lunes") {
                 // Mostrar solo el lunes
