@@ -215,7 +215,6 @@ function mostrarMisterio(diaId, numeroMisterio) {
                             mostrarOracion('avemaria');
                             break;
                     }
-                    //mostrarOracion(index === 0 ? 'padrenuestro' : 'avemaria');
                 }
             }
         });
@@ -272,81 +271,26 @@ function mostrarMisterio(diaId, numeroMisterio) {
             cambiarImagen(e.target.checked);
         }
     });
-    
-    // Variables para manejar los eventos de deslizamiento
-    let touchStartX = 0;
-    let touchStartY = 0;
-    const umbralDeslizamiento = 30; // Umbral para considerar un deslizamiento
 
-    // Función para manejar el inicio del toque
-    function handleTouchStart(e) {
-        const touch = e.touches[0];
-        touchStartX = touch.clientX;
-        touchStartY = touch.clientY;
-    }
+    // Función para manejar el toque
+    function handleTouch(e) {
+        const area = e.target.classList.contains('top') ? 'top' :
+                     e.target.classList.contains('bottom') ? 'bottom' :
+                     e.target.classList.contains('left') ? 'left' :
+                     e.target.classList.contains('right') ? 'right' :
+                     'center';
 
-    // Función para manejar el final del toque
-    function handleTouchEnd(e) {
-        const touch = e.changedTouches[0];
-        const touchEndX = touch.clientX;
-        const touchEndY = touch.clientY;
-
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
-
-        // Determinar la dirección del deslizamiento
-        if (Math.abs(deltaX) > umbralDeslizamiento) {
-            // Deslizamiento horizontal
-            if (deltaX > 0) {
-                // Deslizar a la derecha: retroceder bola
-                if (posicionActual >= 0) {
-                    posicionActual--;
-                    actualizarBolas();
-                    traza("Retroceder bola");
-                }
-            } else {
-                // Deslizar a la izquierda: avanzar bola
-                if (posicionActual < 11) {
-                    posicionActual++;
-                    actualizarBolas();
-                    traza("Avanzar bola");
-                }
-            }
-        } else {
-            // Deslizamiento vertical
-            if (Math.abs(deltaY) > umbralDeslizamiento) {
-                // Deslizar hacia abajo: retroceder misterio
+        switch (area) {
+            case 'top':
                 if (numeroMisterio > 1) {
                     mostrarMisterio(diaId, numeroMisterio - 1);
                     traza("Retroceder misterio");
-                }
-            } else {
-                // Deslizar hacia arriba: avanzar misterio
-                if (numeroMisterio < 5) {
-                    mostrarMisterio(diaId, numeroMisterio + 1);
-                    traza("Avanzar misterio");
-                }
-            }
-        }
-    }
-
-    // Agregar los event listeners para los eventos de toque
-    capaFlotante.addEventListener('touchstart', handleTouchStart);
-    capaFlotante.addEventListener('touchend', handleTouchEnd);
-
-    // Función para manejar doble toque
-    function handleDoubleTap(area) {
-        switch (area) {
-            case 'top':
-                if (numeroMisterio < 5) {
-                    mostrarMisterio(diaId, numeroMisterio + 1);
-                    traza("Avanzar misterio");
                 }
                 break;
             case 'bottom':
-                if (numeroMisterio > 1) {
-                    mostrarMisterio(diaId, numeroMisterio - 1);
-                    traza("Retroceder misterio");
+                if (numeroMisterio < 5) {
+                    mostrarMisterio(diaId, numeroMisterio + 1);
+                    traza("Avanzar misterio");
                 }
                 break;
             case 'left':
@@ -367,24 +311,6 @@ function mostrarMisterio(diaId, numeroMisterio) {
                 // Acción para el centro (puede ser personalizada)
                 break;
         }
-    }
-
-    // Variables para manejar el doble toque
-    let lastTap = 0;
-
-    // Función para manejar el toque
-    function handleTouch(e) {
-        const currentTime = new Date().getTime();
-        const tapLength = currentTime - lastTap;
-        if (tapLength < 500 && tapLength > 0) {
-            const area = e.target.classList.contains('top') ? 'top' :
-                         e.target.classList.contains('bottom') ? 'bottom' :
-                         e.target.classList.contains('left') ? 'left' :
-                         e.target.classList.contains('right') ? 'right' :
-                         'center';
-            handleDoubleTap(area);
-        }
-        lastTap = currentTime;
     }
 
     // Agregar los event listeners para las áreas de toque
