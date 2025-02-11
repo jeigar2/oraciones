@@ -109,6 +109,10 @@ function toggleVisibility(parentId) {
             if (sr1Text) sr1Text.setAttribute('y', '1016.3389');
             if (sr2Text) sr2Text.setAttribute('y', '1032.6357');
             if (pathPJ) pathPJ.setAttribute('d', 'M82,1019.6406 L92,1019.6406 C107,1019.6406 107,1019.6406 122,1019.6406 L132,1019.6406');
+
+            // Restaurar la posición del scroll
+            window.scrollTo(0, scrollPosition);
+        
         } else {
             // Si todo está visible, mostrar solo el día actual
             const today = new Date().getDay();
@@ -240,6 +244,10 @@ function toggleVisibility(parentId) {
             }
             
             traza("Mostrando misterios del " + currentDay);
+
+            // Guardar la posición del scroll y mover al inicio
+            scrollPosition = window.scrollY;
+            window.scrollTo(0, 0);
         }
     } else {
         // Comportamiento original para los otros días
