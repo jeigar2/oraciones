@@ -108,8 +108,8 @@
     border-radius: 4px;
 } 
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 768px) {
+/* Media queries para pantallas pequeñas en modo vertical */
+@media (max-width: 768px) and (orientation: portrait) {
     .menu-toggle {
         font-size: 36px;
         width: 48px;
@@ -148,10 +148,33 @@
     }
 }
 
+/* Media queries para pantallas pequeñas en modo horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+    .menu-toggle {
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-link {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .menu-link i {
+        font-size: 1.2em;
+    }
+
+    .tecla {
+        font-size: 0.9em;
+        padding: 3px 6px;
+    }
+}
+
 /* Media queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .menu-toggle {
-        font-size: 42px;
+        font-size: 36px;
         width: 60px;
         height: 60px;
     }
