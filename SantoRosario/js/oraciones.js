@@ -52,14 +52,15 @@
         };
         
         // Remover oración anterior si existe
-        const oracionExistente = document.querySelector('.capa-oracion');
-        if (oracionExistente) oracionExistente.remove();
+        cerrarOracion();
         
         const oracion = oraciones[configuracion.idiomaSeleccionado][tipo];
         const capaOracion = document.createElement('div');
         capaOracion.className = 'capa-oracion';
         capaOracion.innerHTML = `
             <div class="oracion-contenido">
+            <span class="cerrar-oracion" onclick="cerrarOracion()">X</span>
+            <span class="contador">${configuracion.tiempoOracion}</span>
                 <p class="primera-parte">${oracion.primera}</p>
                 <p class="segunda-parte">${oracion.segunda}</p>
             </div>
@@ -74,6 +75,25 @@
                     capaOracion.remove();
                 }
             }, configuracion.tiempoOracion);
+        }
+        const capaContador = document.querySelector('.contador');
+        let segundosRestantes = configuracion.tiempoOracion / 1000;
+        // Actualizar el contador cada segundo
+        const intervalo = setInterval(() => {
+            segundosRestantes--;
+            capaContador.innerHTML = segundosRestantes;
+            if (segundosRestantes <= 0) {
+                clearInterval(intervalo);
+                
+            }
+        }, 1000);
+    }
+
+    // Función para cerrar la oración
+    function cerrarOracion() {
+        const oracionExistente = document.querySelector('.capa-oracion');
+        if (oracionExistente) {
+            oracionExistente.remove();
         }
     }
     
