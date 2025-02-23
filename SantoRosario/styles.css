@@ -457,3 +457,44 @@ svg text {
         font-size: 24px;
     }
 }
+
+/* Estilos para las áreas de toque */
+.touch-area {
+    position: absolute;
+    z-index: 10000;
+}
+
+.touch-area.top {
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 20%;
+}
+
+.touch-area.bottom {
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 20%;
+}
+
+.touch-area.left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+}
+
+.touch-area.right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+}
+
+.touch-area.center {
+    top: 20%;
+    bottom: 20%;
+    left: 20%;
+    right: 20%;
+}
