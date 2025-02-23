@@ -346,7 +346,23 @@ function toggleVisibilityMisterio(nodeId) {
     }
 }
 
-// Event listener global para la tecla H
+// Obtener el día activo
+function obtenerDiaActivo() {
+    const dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+    const hoy = new Date().getDay(); // 0 (Domingo) a 6 (Sábado)
+    return dias[hoy];
+}
+
+// Función para mostrar el primer misterio si no está visible
+function mostrarPrimerMisterioSiNoVisible() {
+    const primerMisterio = document.querySelector('.capa-flotante');
+    if (!primerMisterio) {
+        const diaActivo = obtenerDiaActivo();
+        mostrarMisterio(diaActivo, 1); // Mostrar el primer misterio del día activo
+    }
+}
+
+// Event listener global para las teclas
 document.addEventListener('keydown', (e) => {
     // Si hay un input activo, no procesar atajos de teclado
     if (document.activeElement.tagName === 'INPUT') {
@@ -361,6 +377,8 @@ document.addEventListener('keydown', (e) => {
         mostrarConfiguracion();
     } else if (e.key.toLowerCase() === 'i') {   
         cambiarImagen(e.target.checked);
+    } else if (e.key.toLowerCase() === 'q') {
+        mostrarPrimerMisterioSiNoVisible();
     } else {
         // Mapeo de teclas numéricas a días
         const teclasDias = {
