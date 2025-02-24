@@ -1,5 +1,15 @@
 # oraciones
 
+- v2.2.2
+  - Santo Rosario agrega 
+    - oraciones iniciales
+    - jaculatorias en los misterios,
+    - avence en la version movil de misterios y cuentas del rosario tocando el la capa del misterio en los puntos cardinales
+    - N (arriba) Avanza Misterio
+    - S (abajo) Retrocede Misterio
+    - E (derecha) Avanza cuenta del rosario
+    - O (izquierda) Retrocede cuenta del rosario
+
 - v2.2.1
   - Santo Rosario agrega multiidoma (ES Español, IT Italiano, LA Latin) para las oraciones del "Padre Nuestro", "Ave María" y "Gloria"
 
@@ -46,6 +56,12 @@ HTML que tiene las oraciones, y se pueden seguir con el cursor.
     - maxTrazas
 - v3.2
   - Se agrega multiidoma para las oraciones del "Padre Nuestro", "Ave María" y "Gloria", los idiomas que tiene preconfigurados son Español, Italiano y Latín
+
+- v3.3
+  - Se agrega via movil que se puede pulsar en la capa del misterio sobre el borde superior para avanzar misterio, en inferior para retroceder misterio a la derecha se avanzan en asl cuentas del rosario y en la izquierda se retrocede.
+  - Se agrega el acceso al primer misterio (se muestra con la tecla 'q')
+  - Se agregan las oraciones iniciales (se muestran con la tecla 's')
+  - Se agregan las jaculatorias al final
 
 - TODO:
   - Añadir el audio de las oraciones

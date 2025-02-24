@@ -13,6 +13,8 @@ function mostrarAyuda() {
             <span class="cerrar-flotante" onclick="cerrarAyuda()">&times;</span>
             <h2>Atajos de Teclado</h2>
             <ul>
+                <li><strong>s</strong> Mostrar Oraciones iniciales</li>
+                <li><strong>q</strong> Mostrar Primer misterio del día actual</li>
                 <li><strong>→</strong> Avanzar cuenta del rosario</li>
                 <li><strong>←</strong> Retroceder cuenta del rosario</li>
                 <li><strong>+</strong> Siguiente misterio</li>

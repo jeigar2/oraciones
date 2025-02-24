@@ -142,9 +142,9 @@ function mostrarMisterio(diaId, numeroMisterio) {
     
     // Función para manejar eventos de teclado
     function manejarTeclado(e) {
-        if (e.key === 'ArrowRight') {
+        if (e.key === 'ArrowRight' || e.key === 'Space') {
             // Flecha derecha: avanzar bola
-            if (posicionActual < 11) {
+            if (posicionActual < 12) {
                 posicionActual++;
                 actualizarBolas();
                 traza("Avanzar misterio");
@@ -221,7 +221,11 @@ function mostrarMisterio(diaId, numeroMisterio) {
 
         // Actualizar botones
         btnRetroceder.disabled = posicionActual < 0;
-        btnAvanzar.disabled = posicionActual >= 11; // index 11 es la jaculatoria final
+        btnAvanzar.disabled = posicionActual >= 11; // index 11 inician las jaculatorias
+
+        if (posicionActual === 12) {
+            mostrarJaculatorias();
+        }
     }
     
     // Función para cerrar la capa
@@ -370,6 +374,8 @@ document.addEventListener('keydown', (e) => {
         cambiarImagen(e.target.checked);
     } else if (e.key.toLowerCase() === 'q') {
         mostrarPrimerMisterioSiNoVisible();
+    } else if (e.key.toLowerCase() === 's') {
+        mostrarOracionesIniciales();
     } else {
         // Mapeo de teclas numéricas a días
         const teclasDias = {
@@ -411,3 +417,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 */
 
 obtenerInfoDispositivo();
+
+// Cargar los archivos de oraciones iniciales y jaculatorias
+document.write('<script src="js/oracionesIniciales.js"></script>');
+document.write('<script src="js/jaculatorias.js"></script>');
