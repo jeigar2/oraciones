@@ -4,11 +4,11 @@
   - Santo Rosario agrega 
     - oraciones iniciales
     - jaculatorias en los misterios,
-    - avence en la version movil de misterios y cuentas del rosario tocando el la capa del misterio en los puntos cardinales
-    - N (arriba) Avanza Misterio
-    - S (abajo) Retrocede Misterio
-    - E (derecha) Avanza cuenta del rosario
-    - O (izquierda) Retrocede cuenta del rosario
+    - avance en la version movil de misterios y cuentas del rosario tocando el la capa del misterio en los puntos cardinales
+      - N (arriba) Avanza Misterio
+      - S (abajo) Retrocede Misterio
+      - E (derecha) Avanza cuenta del rosario
+      - O (izquierda) Retrocede cuenta del rosario
 
 - v2.2.1
   - Santo Rosario agrega multiidoma (ES Español, IT Italiano, LA Latin) para las oraciones del "Padre Nuestro", "Ave María" y "Gloria"
