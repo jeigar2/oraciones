@@ -1,44 +1,20 @@
-// Función para manejar el toque
-function handleTouch(e) {
-    const area = e.target.classList.contains('_left') ? 'left' : right;
-    /*
-    const area = e.target.classList.contains('_top') ? 'top' :
-                    e.target.classList.contains('_bottom') ? 'bottom' :
-                    e.target.classList.contains('_left') ? 'left' : 
-                    e.target.classList.contains('_right') ? 'right' :
-                    'center';
-    */
-
-    switch (area) {
-        //case 'top':
-        //    break;
-        //case 'bottom':
-        //    break;
-        case 'left':
-            e.preventDefault();
-            moveForward();
-            flashEffect(e.target);
-            break;
-        case 'right':
-            e.preventDefault();
-            moveBackward();
-            flashEffect(e.target);
-            break;
-        //case 'center':
-        //    // Acción para el centro (puede ser personalizada)
-        //    break;
-    }
-}
-
-// Función para aplicar el efecto de flash
-function flashEffect(element) {
-    element.classList.add('flash');
-    setTimeout(() => {
-        element.classList.remove('flash');
-    }, 500); // Eliminar la clase después de 1 segundo
-}
-
-// Agregar los event listeners para las áreas de toque
-document.querySelectorAll('.touch-area').forEach(area => {
-    area.addEventListener('touchend', handleTouch);
-});
+    // Función para manejar el toque en la columna derecha
+    function handleTouch(e) {
+        const touchY = e.touches[0].clientY;
+        const columnRight = document.querySelector('.column.right');
+        const columnRect = columnRight.getBoundingClientRect();
+        const columnMidY = columnRect.top + (columnRect.height / 2);
+  
+        if (touchY > columnMidY) {
+          // Tocado en la mitad inferior
+          const arrowDownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
+          document.dispatchEvent(arrowDownEvent);
+        } else {
+          // Tocado en la mitad superior
+          const arrowUpEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
+          document.dispatchEvent(arrowUpEvent);
+        }
+      }
+  
+      // Añadir event listener para el toque en la columna derecha
+      document.querySelector('.column.right').addEventListener('touchstart', handleTouch);
