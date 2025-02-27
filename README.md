@@ -1,5 +1,11 @@
 # oraciones
 
+- v2.2.3
+  - Coronilla Divina Misericordia
+    - Distribuido el código en fichero css, y varios javascript
+  - Santo Rosario
+    - corregido el misterio del día actua al mostrar con 'q' mostraba el dia siguiente al actual.
+
 - v2.2.2
   - Santo Rosario agrega 
     - oraciones iniciales

@@ -343,7 +343,7 @@ function toggleVisibilityMisterio(nodeId) {
 
 // Obtener el día activo
 function obtenerDiaActivo() {
-    const dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+    const dias = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
     const hoy = new Date().getDay(); // 0 (Domingo) a 6 (Sábado)
     return dias[hoy];
 }

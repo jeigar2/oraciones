@@ -1,6 +1,6 @@
 // Configuración del menú
 const menuConfig = {
-    version: '2.2.2',
+    version: '2.2.3',
     items: [
         {
             id: 'home',
@@ -46,7 +46,7 @@ function createMenu() {
     const currentPath = window.location.pathname;
     
     // Ajustar las URLs según la ubicación actual
-    const isInSubfolder = currentPath.includes('/SantoRosario/');
+    const isInSubfolder = currentPath.includes('/SantoRosario|CoronillaDivinaMisericordia/');
     const urlPrefix = isInSubfolder ? '../' : '';
     
     // Actualizar las URLs del menú
