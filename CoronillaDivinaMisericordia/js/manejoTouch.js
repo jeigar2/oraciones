@@ -7,10 +7,12 @@
   
         if (touchY > columnMidY) {
           // Tocado en la mitad inferior
+          cambiaTituloTest('Tocado en la mitad inferior');
           e.preventDefault();
           moveForward();
         } else {
           // Tocado en la mitad superior
+          cambiaTituloTest('Tocado en la mitad superior');
           e.preventDefault();
           moveBackward();
         }
@@ -18,3 +20,8 @@
   
       // Añadir event listener para el toque en la columna derecha
       document.querySelector('.column.right').addEventListener('touchstart', handleTouch);
+
+      function cambiaTituloTest(texto) {
+        const tituloTest = document.getElementById('titul01');
+        tituloTest.textContent = texto;
+      }
