@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Oración de la Coronilla de la Divina Misericordia</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../menu.css">
+    <script src="../menu.js"></script>
+    <script src="js/inicializar.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/audioDatos.js"></script>
+    <script src="js/manejoTeclado.js"></script>
+    <script src="js/manejoMensajes.js"></script>
+  </head>
+  <body>
+    <h1>Coronilla de la Divina Misericordia</h1>
+    <div class="controls">
+        <label>
+            <input type="checkbox" id="audioEnabled"> 
+            Reproducir Audio
+        </label>
+        <label>
+            <input type="checkbox" id="autoplayEnabled"> 
+            Reproducción Automática
+        </label>
+    </div>
+    
+    <div class="container">
+        <div class="column left">
+            <div>
+                <div onclick="ocultar(this)" >
+                    <h2>Petición inicial</h2>
+                    <p onmouseenter="mostrarTexto(1, this)", onmouseout="ocultarTexto()">En esta coronilla, pidamos por todas las almitas que estan yendo a la presencia del Señor que el los reciba con sus brazos amorosos, pidamos por todos los enfermitos, agonizantes, caminantes, navegantes, desterrados, perseguidos, encarcelados, por los sacerdotes y consagrados, por las vocaciones, por los que estan solos y no hay quien se acuerde de ellos, por las mujeres embarazadas especialmente por las que están tentadas con el aborto, las que ya han abortado y todos los que ayudaron en el proceso para que se reconcilien con Dios pidamos tambien por los matrimonios que está pasando por dificultades, por nuestras necesidades que el Señor nos muestre su rostro, tenga misericordia de nosotros y nos de la vida eterna.<br> Amén</p>
+                </div>
+                <hr>
+                <div onclick="ocultar(this)">
+                    <h2>Oración al principio</h2>
+                    <p onmouseenter="mostrarTexto(2, this)" onmouseout="ocultarTexto()">Expiraste, Jesús, pero la fuente de vida brotó para las almas y el mar de misericordia se abrió para el mundo entero.</p>
+                    <p onmouseenter="mostrarTexto(3, this)" onmouseout="ocultarTexto()">Oh fuente de vida, insondable Misericordia Divina, abarca al mundo entero y derrámate sobre nosotros.</p>
+                    <hr>
+                    <p onmouseenter="mostrarTexto(4, this, 'Jesús, en tí confío')" onmouseout="ocultarTexto()">Oh Sangre y Agua que brotaste del Corazón de Jesús, como una Fuente de Misericordia para nosotros</p>
+                </div>
+                <ul>
+                    <li onclick="ocultar(this)" onmouseenter="mostrarTexto(5, 'Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo.', 'Danos hoy nuestro pan de cada día; perdona nuestras ofensas como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Padre Nuestro</li>
+                    <li onclick="ocultar(this)" onmouseenter="mostrarTexto(6, 'Dios te salve, María, llena eres de gracia; el Señor es contigo. Bendita Tú eres  entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.', 'Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Ave María</li>
+                    <li onclick="ocultar(this)" onmouseenter="mostrarTexto(7, 'Creo en Dios, Padre todopoderoso, Creador del cielo y de la tierra. Creo en Jesucristo, su único Hijo, nuestro Señor, que fue concebido por obra y gracia del Espíritu Santo, nació de Santa María Virgen, padeció bajo el poder de Poncio Pilato, fue crucificado, muerto y sepultado, descendió a los infiernos, al tercer día resucitó de entre los muertos, subió a los cielos y está sentado a la derecha de Dios, Padre todopoderoso. Desde allí ha de venir a juzgar a los vivos y a los muertos. Creo en el Espíritu Santo, la santa Iglesia católica, la Comunión de los Santos, el perdón de los pecados, la resurrección de la carne y la vida eterna. Amén')", onmouseout="ocultarTexto(); this.style.color='gray'">Credo</li>
+                </ul>
+
+                <ol>
+                    <li onmouseenter="mostrarTexto(8, this)", onmouseout="ocultarTexto(); this.style.color='gray'">Padre eterno, te ofrezco el cuerpo, la sangre, el alma y la divinidad de tu amadísimo hijo nuestro Señor Jesucristo como propiciación de nuestros pecados y los del mundo entero.</li>
+                    <ol>    
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                    </ol>
+                    <br>
+                    <li onmouseenter="mostrarTexto(8, this)", onmouseout="ocultarTexto(); this.style.color='gray'">Padre eterno, te ofrezco el cuerpo, la sangre, el alma y la divinidad de tu amadísimo hijo nuestro Señor Jesucristo como propiciación de nuestros pecados y los del mundo entero.</li>
+                    <ol>    
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                    </ol>
+                    <br>
+                    <li onmouseenter="mostrarTexto(8, this)", onmouseout="ocultarTexto(); this.style.color='gray'">Padre eterno, te ofrezco el cuerpo, la sangre, el alma y la divinidad de tu amadísimo hijo nuestro Señor Jesucristo como propiciación de nuestros pecados y los del mundo entero.</li>
+                    <ol>    
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                    </ol>
+                    <br>
+                    <li onmouseenter="mostrarTexto(8, this)", onmouseout="ocultarTexto(); this.style.color='gray'">Padre eterno, te ofrezco el cuerpo, la sangre, el alma y la divinidad de tu amadísimo hijo nuestro Señor Jesucristo como propiciación de nuestros pecados y los del mundo entero.</li>
+                    <ol>    
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                    </ol>
+                    <br>
+                    <li onmouseenter="mostrarTexto(8, this)", onmouseout="ocultarTexto(); this.style.color='gray'">Padre eterno, te ofrezco el cuerpo, la sangre, el alma y la divinidad de tu amadísimo hijo nuestro Señor Jesucristo como propiciación de nuestros pecados y los del mundo entero.</li>
+                    <ol>    
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+
+                        <li onmouseenter="mostrarTexto(9, this, 'ten misericordia de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">Por su dolorosa pasion,</li>
+                    </ol>
+                </ol>
+                <br>
+                <ol>
+                    <li onmouseenter="mostrarTexto(10, this, 'ten piedad de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">- Santo Dios, Santo fuerte, Santo Inmortal</li>
+                    <li onmouseenter="mostrarTexto(10, this, 'ten piedad de nosotros y del mundo entero'.toUpperCase())", onmouseout="ocultarTexto(); this.style.color='gray'">- Santo Dios, Santo fuerte, Santo Inmortal</li>
+                    <li onmouseenter="mostrarTexto(10, this, 'ten piedad de nosotros y del mundo entero')", onmouseout="ocultarTexto(); this.style.color='gray'">- Santo Dios, Santo fuerte, Santo Inmortal</li>
+                </ol>
+                <h2>Oración final (opcional)</h2>
+                <p onmouseenter="mostrarTexto(11, this)", onmouseout="ocultarTexto()">Oh Dios Eterno, en quien la misericordia es infinita y el tesoro de compasión inagotable, vuelve a nosotros Tu mirada bondadosa y aumenta Tu misericordia en nosotros, para que en momentos difíciles no nos desesperemos ni nos desalentamos, sino que, con gran confianza, nos sometamos a Tu santa voluntad, que es el Amor y la Misericordia Mismos (950)</p>
+                <hr>
+                <ul>
+                    <li onmouseenter="mostrarHTML(12, '<div class=\'scroll\'>Dios te salve, Reina <br>y Madre de misericordia,<br>vida, dulzura y esperanza nuestra;<br>Dios te salve.<br>A ti llamamos <br>los desterrados hijos de Eva;<br>a ti suspiramos, gimiendo y llorando<br>en este valle de lágrimas.<br>Ea, pues, Señora, abogada nuestra,<br>vuelve a nosotros esos tus ojos <br>misericordiosos;<br>y después de este destierro, <br>muéstranos a Jesús,<br>fruto bendito de tu vientre.<br><br>¡Oh, clementísima, oh piadosa, <br>oh dulce Virgen María!</div>', 200);" onmouseout="ocultarTexto(); this.style.color='gray'">Salve</li>
+                    <li onmouseenter="mostrarHTML(0, '<div class=\'scroll\'>Ruega por nosotros Santa Madre de Dios <br>para que seamos dignos de alcanzar<br>las promesas de nuestro Señor Jesucristo<br>Amen.</div>');" onmouseout="ocultarTexto(); this.style.color='gray'">Ruega por nosotros</li>
+                    <li onmouseout="ocultarTexto(); this.style.color='gray'">Oracion voluntaria <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank">evangelio-de-hoy</a>  - <a href="https://www.plough.com/es/suscribir/oracion-diaria" target="_blank">oracion-del-dia</a> - <a href="https://sacredspace.com/es/daily-prayer/" target="_blank">daily-prayer</a> + <a href="https://www.vaticannews.va/es/oraciones.html" target="_blank">oraciones varias</a></li>
+                    <li onmouseenter="mostrarHTML(13, 'Sagrada María, vuestro esclavo soy, <br>con vuestra licencia a pasar ésta noche voy.<br>No permitas Madre Mía, <br>por tu santa e inmaculada concepción,<br>que caiga en pecado mortal <br>y muera sin confesión. <br>Vos como mi buena Madre, <br>dame tu santa bendición,<br>para pasar esta noche sin ninguna tentación.<br>Madre mía, bendecidnos y abridnos las puertas del cielo. <br>Amen.', 360)" onmouseout="ocultarTexto(); this.style.color='gray'">Sagrada María.</li>
+                    <li onmouseenter="mostrarHTML(14, 'En el nombre del Padre, del Hijo y del Espíritu Santo. <br>Amen.');" onmouseout="ocultarTexto(); this.style.color='gray'">Señal de la cruz</li>
+                    <li onmouseenter="mostrarTexto(15, this, 'sin pecado concebida')", onmouseout="ocultarTexto(); this.style.color='gray'">Ave María purísima</li>
+                    <li onmouseenter="mostrarTexto(16, this, 'Amén, ¡Gloria a Dios!, ¡Aleluya!')", onmouseout="ocultarTexto(); this.style.color='gray'">Rogad por nosotros que recurrimos a vos.</li>
+                </ul>
+            </div>        
+        </div>
+        <div class="column right" style="--right-offset: 20px; --right-width: 20px;">
+            <div id="image-column">
+                <img src="https://cdn.culturagenial.com/es/imagenes/divina-misericordia-1-3c.jpg" alt="Cuadro Divina Misericordia" height="100%">
+                <div draggable="true" id="mensaje">
+                    Coronilla de la Divina Misericordia
+                 </div>
+            </div>
+            <div class="touch-areas">
+                <div class="touch-area _top"></div>
+                <div class="touch-area _bottom"></div>
+                <div class="touch-area _left"></div>
+                <div class="touch-area _right"></div>
+                <div class="touch-area _center"></div>
+            </div>       
+        </div>
+    </div>
+    <iframe src="" width="100%" style="border: 1px solid #FFFFFF;" height="400" frameborder="0" allowfullscreen="0" scrolling="no" loading="lazy"></iframe>
+  </body>
+</html>

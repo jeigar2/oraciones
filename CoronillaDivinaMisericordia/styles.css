@@ -1,0 +1,193 @@
+/* Estilos para el texto normal */
+li, p {
+  font-size: 24px;
+  color: #000;
+}
+
+/* Estilos para el texto cuando se pasa con el ratón */
+li:hover, p:hover {
+  background-color: #0000ff; /* Azul */
+  color: #fff; /* Blanco */
+  /*font-size: 28px; /* Aumenta el tamaño en 2 unidades */
+  /*font-weight: bold; /* Negrita */
+}
+.out {
+  text-decoration: underline wavy rgba(2, 5, 53, 0.856);
+}
+
+.scroll  {
+  overflow: auto;
+  scrollbar-width: 2px;
+  max-height: 650px;
+  max-width: 600px;
+  
+}
+
+#mensaje {
+  z-index: 1;
+  position: absolute;
+  width: 90%;
+  color: rgb(4, 78, 236);
+  font-size: 28px;
+  font-weight: bold; 
+  border: 2pt solid #fff;
+  background-color: rgba(250, 235, 215, 0.863);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.frase{
+  color: rgb(40, 143, 0);
+  font-size: 28px;
+  font-weight: bold; 
+}
+
+.respuesta {
+  color: rgb(236, 4, 4);
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 92vh;
+}
+
+.column {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  
+}
+
+.left {
+  background-color: #f0f0f0;
+  overflow-y: auto; /* Agregamos overflow-y: auto para habilitar el scroll vertical */
+}
+
+.right {
+  background-color: #ccc;
+}
+
+@media (max-width: 300px) {
+  .column {
+    flex-direction: column;
+  }
+  .left {
+    height: 70vh;
+  }
+  .right {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .column {
+      width: 100%;
+  }
+  .left {
+      margin-bottom: 20px;
+  }
+  .right {
+      margin-top: 20px;
+  }
+}
+
+#image-column {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image-column img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.audio-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+li, p {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #000;
+}
+
+.controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.controls input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Estilos para las áreas de toque */
+.touch-area {
+  position: absolute;
+  z-index: 10000;
+}
+
+.touch-area._top {
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 20%;
+}
+
+.touch-area._bottom {
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 20%;
+}
+
+.touch-area._left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+}
+
+.touch-area._right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+}
+
+.touch-area._center {
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+}

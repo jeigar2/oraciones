@@ -20,7 +20,7 @@ const menuConfig = {
             id: 'coronilla',
             title: 'Coronilla',
             icon: 'fa-cross',
-            url: '../CoronillaDivinaMisericordia.html',
+            url: '../CoronillaDivinaMisericordia/CoronillaDivinaMisericordia.html',
             shortcut: 'Alt+C'
         },
         {
