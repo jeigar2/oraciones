@@ -7,12 +7,12 @@
   
         if (touchY > columnMidY) {
           // Tocado en la mitad inferior
-          const arrowDownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
-          document.dispatchEvent(arrowDownEvent);
+          e.preventDefault();
+          moveForward();
         } else {
           // Tocado en la mitad superior
-          const arrowUpEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
-          document.dispatchEvent(arrowUpEvent);
+          e.preventDefault();
+          moveBackward();
         }
       }
   
