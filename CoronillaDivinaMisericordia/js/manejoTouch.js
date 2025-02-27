@@ -12,17 +12,27 @@ function handleTouch(e) {
         case 'bottom':
             break;
         case 'left':
-            event.preventDefault();
+            e.preventDefault();
             moveForward();
+            flashEffect(e.target);
             break;
         case 'right':
-            event.preventDefault();
+            e.preventDefault();
             moveBackward();
+            flashEffect(e.target);
             break;
         case 'center':
             // Acción para el centro (puede ser personalizada)
             break;
     }
+}
+
+// Función para aplicar el efecto de flash
+function flashEffect(element) {
+    element.classList.add('flash');
+    setTimeout(() => {
+        element.classList.remove('flash');
+    }, 1000); // Eliminar la clase después de 1 segundo
 }
 
 // Agregar los event listeners para las áreas de toque
