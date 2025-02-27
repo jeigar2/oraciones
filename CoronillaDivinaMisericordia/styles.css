@@ -157,6 +157,7 @@ li, p {
   z-index: 10000;
 }
 
+/*
 .touch-area._top {
   top: 0;
   left: 20%;
@@ -171,25 +172,36 @@ li, p {
   height: 20%;
 }
 
-.touch-area._left {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 20%;
-}
-
-.touch-area._right {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 20%;
-}
-
 .touch-area._center {
   top: 20%;
   bottom: 20%;
   left: 20%;
   right: 20%;
+}
+*/
+
+.touch-area._left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+}
+
+.touch-area._left:hover {
+  background-color: rgba(250, 250, 9, 0.179);
+  border: gold dotted 1px;  
+}  
+
+.touch-area._right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 10%;
+}
+
+.touch-area._right:hover {
+  background-color: rgba(250, 250, 9, 0.179);
+  border: gold dotted 1px; 
 }
 
 .flash {

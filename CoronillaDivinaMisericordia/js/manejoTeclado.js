@@ -6,6 +6,7 @@ function handleKeyboardEvent(event) {
 
     switch(event.key) {
         case ' ':
+            flashEffect(event.target);
         case 'ArrowDown':
             event.preventDefault();
             moveForward();
