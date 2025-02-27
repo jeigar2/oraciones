@@ -46,7 +46,7 @@ function createMenu() {
     const currentPath = window.location.pathname;
     
     // Ajustar las URLs según la ubicación actual
-    const isInSubfolder = currentPath.includes('/SantoRosario|CoronillaDivinaMisericordia/');
+    const isInSubfolder = currentPath.includes('SantoRosario') || currentPath.includes('CoronillaDivinaMisericordia');
     const urlPrefix = isInSubfolder ? '../' : '';
     
     // Actualizar las URLs del menú
