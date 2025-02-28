@@ -399,6 +399,17 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+
+// Mostrar la capa de configuración
+document.getElementById('btnMostrarConfiguracion').addEventListener('click', function() {
+    mostrarConfiguracion();
+});
+
+// Mostrar la capa con el primer misterio Actual
+document.getElementById('btnMostrarPrimerMisterioActual').addEventListener('click', function() {
+    mostrarPrimerMisterioSiNoVisible();
+});
+
 // Función para cambiar el idioma
 function cambiarIdioma(nuevoIdioma) {
     if (oraciones[nuevoIdioma]) {

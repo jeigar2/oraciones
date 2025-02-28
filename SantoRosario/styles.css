@@ -578,7 +578,7 @@ svg text {
 }
 
 #btnMostrarOraciones {
-    display: none;
+    display: block;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -591,8 +591,39 @@ svg text {
     z-index: 1000;
   }
 
+
+  #btnMostrarConfiguracion {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #007bff;
+    border: #007bff 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  #btnMostrarPrimerMisterioActual {
+    display: block;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #007bff;
+    border: #007bff 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+/*
   @media (max-width: 768px) {
     #btnMostrarOraciones {
       display: block;
     }
   }
+*/
