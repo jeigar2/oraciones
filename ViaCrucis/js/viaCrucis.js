@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
   estacion.addEventListener('touchstart', function(e) {
     const touchX = e.touches[0].clientX;
     const rect = estacion.getBoundingClientRect();
-    const midX = rect.left + (rect.width / 2);
+    const midX = rect.left + (rect.width / 10);
 
     if (touchX > midX) {
       // Avanzar a la siguiente estación
