@@ -21,12 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
     estacion.style.display = 'none';
   });
 
-
   btnMostrarPrimeraEstacion.addEventListener('click', function() {
     oracionInicial.style.display = 'none';
     mostrarEstacion(0);
     btnMostrarSiguienteEstacion.style.display = 'block';
-    btnMostrarPrimeraEstacion.style.display = 'none'
+    btnMostrarPrimeraEstacion.style.display = 'none';
   });
 
   btnMostrarSiguienteEstacion.addEventListener('click', function() {
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function mostrarEstacion(index) {
     const data = viaCrucisData[index];
-    const total = viaCrucisData[index].length;
+    const total = viaCrucisData.length;
     const oraciones = oracionesComunes;
     document.getElementById('tituloEstacion').textContent = data.estacion;
     document.getElementById('subtituloEstacion').textContent = data.titulo;
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('respuestaPueblo').textContent = oraciones.respuestaPueblo;
     document.getElementById('cita').textContent = data.cita;
     document.getElementById('reflexion').innerHTML = '';
-    // el data.reflexion es un array de strings, por lo que se debe iterar y añadir un parrafo por cada elemento
     for (let i = 0; i < data.reflexion.length; i++) {
       const reflexion = document.createElement('p');
       reflexion.textContent = data.reflexion[i];
@@ -66,14 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('jaculatoria1').textContent = oraciones.jaculatoria1;
     document.getElementById('jaculatoria2').textContent = oraciones.jaculatoria2;
     document.getElementById('poema').innerHTML = '';
-    // el data.poema es un array de strings, por lo que se debe iterar y añadir un parrafo por cada elemento
     let poema = document.createElement('ul');
     for (let i = 0; i < data.poema.length; i++) {
       let verso = document.createElement('li');
       if(data.poema[i] === ''){
         verso = document.createElement('br');
       } else if (i === data.poema.length) {
-        // el último verso es el autor sera un elemento <cite>
         verso = document.createElement('cite');
         verso.textContent = data.poema[i];
       } else {
@@ -110,27 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
       btnMostrarSiguienteEstacion.style.display = 'none';
       btnMostrarAnteriorEstacion.style.display = 'none';
     }
-  }
-  );    
-
+  });
 
   // Añadir event listener para el toque en la capa de estaciones
   estacion.addEventListener('touchstart', function(e) {
     const touchX = e.touches[0].clientX;
     const rect = estacion.getBoundingClientRect();
-    const midX = rect.left + (rect.width / 10);
+    const leftBoundary = rect.left + (rect.width * 0.1);
+    const rightBoundary = rect.right - (rect.width * 0.1);
 
-    if (touchX > midX) {
-      // Avanzar a la siguiente estación
-      const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
-      if (currentIndex < viaCrucisData.length - 1) {
-        mostrarEstacion(currentIndex + 1);
-      }
-    } else {
+    if (touchX < leftBoundary) {
       // Retroceder a la estación anterior
       const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
       if (currentIndex > 0) {
         mostrarEstacion(currentIndex - 1);
+      }
+    } else if (touchX > rightBoundary) {
+      // Avanzar a la siguiente estación
+      const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
+      if (currentIndex < viaCrucisData.length - 1) {
+        mostrarEstacion(currentIndex + 1);
       }
     }
   });
