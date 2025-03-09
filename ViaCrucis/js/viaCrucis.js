@@ -1,19 +1,52 @@
+// TODO 
+// los elementos tituloEstacion, subtituloEstacion, fraseOrante, respuestaPueblo se mostrarán siempre,
+// pero cita, reflexión, padrenuestro avemaria, gloria, jaculatoria1 y jaculatoria2 y poema, 
+// se mostrarán en una capa al pulsar la tecla + y se podrá retroceder con -
+// se mostrará de uno en uno, primero la cita, luego la reflexion, luego el padrenuestro,
+// luego el avemaria, luego el gloria, luego la jaculatoria1, luego la jaculatoria2 y por último el poema
+
 document.addEventListener('DOMContentLoaded', function() {
   const oracionInicial = document.getElementById('oracionInicial');
   const estacion = document.getElementById('estacion');
   const btnMostrarOracionInicial = document.getElementById('btnMostrarOracionInicial');
   const btnMostrarPrimeraEstacion = document.getElementById('btnMostrarPrimeraEstacion');
+  const btnMostrarSiguienteEstacion = document.getElementById('btnMostrarSiguienteEstacion');
+  const btnMostrarAnteriorEstacion = document.getElementById('btnMostrarAnteriorEstacion');
+
+  btnMostrarAnteriorEstacion.style.display = 'none';
+  btnMostrarSiguienteEstacion.style.display = 'none';
 
   btnMostrarOracionInicial.addEventListener('click', function() {
     oracionInicial.style.display = 'block';
+    estacion.style.display = 'none';
   });
 
+
   btnMostrarPrimeraEstacion.addEventListener('click', function() {
+    oracionInicial.style.display = 'none';
     mostrarEstacion(0);
+    btnMostrarSiguienteEstacion.style.display = 'block';
+    btnMostrarPrimeraEstacion.style.display = 'none'
+  });
+
+  btnMostrarSiguienteEstacion.addEventListener('click', function() {
+    const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
+    if (currentIndex < viaCrucisData.length - 1) {
+      mostrarEstacion(currentIndex + 1);
+    }
+  });
+
+  btnMostrarAnteriorEstacion.addEventListener('click', function() {
+    oracionInicial.style.display = 'none';
+    const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
+    if (currentIndex > 0) {
+      mostrarEstacion(currentIndex - 1);
+    }
   });
 
   function mostrarEstacion(index) {
     const data = viaCrucisData[index];
+    const total = viaCrucisData[index].length;
     const oraciones = oracionesComunes;
     document.getElementById('tituloEstacion').textContent = data.estacion;
     document.getElementById('subtituloEstacion').textContent = data.titulo;
@@ -52,16 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('imagenEstacion').src = "imagenes/" + data.imagen;
     estacion.style.display = 'block';
+    if (index >= (total - 1)) {
+        btnMostrarSiguienteEstacion.style.display = 'none';
+    } else if (index <= 0 ) {
+        btnMostrarAnteriorEstacion.style.display = 'none';
+    } else {
+        btnMostrarAnteriorEstacion.style.display = 'block';
+        btnMostrarSiguienteEstacion.style.display = 'block';
+    }
   }
 
   // Añadir event listener para el teclado
   document.addEventListener('keydown', function(e) {
+    oracionInicial.style.display = 'none';
     const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
-
     if (e.key === 'ArrowRight' && currentIndex < viaCrucisData.length - 1) {
       mostrarEstacion(currentIndex + 1);
-    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {   
       mostrarEstacion(currentIndex - 1);
+    } else if (e.key === 'Escape') {
+      oracionInicial.style.display = 'none';
+      estacion.style.display = 'none';
+      btnMostrarPrimeraEstacion.style.display = 'block';
+      btnMostrarSiguienteEstacion.style.display = 'none';
+      btnMostrarAnteriorEstacion.style.display = 'none';
     }
   }
   );    

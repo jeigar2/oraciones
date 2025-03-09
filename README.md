@@ -1,6 +1,13 @@
 # oraciones
 
+- v2.2.4
+
+  - Via Crucis 
+    - Se agrega el Via Crucis
+    - Se agrega el reproductor de iVoox player (donde se está leyendo la encíclia del Papa Francisco Fratelli Tutti)
+
 - v2.2.3
+
   - Coronilla Divina Misericordia
     - Distribuido el código en fichero css, y varios javascript
   - Santo Rosario
