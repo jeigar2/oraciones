@@ -36,6 +36,20 @@ const menuConfig = {
             icon: 'fa-dove',
             url: '../Magnificat.html',
             shortcut: 'Alt+M'
+        },
+        {
+            id: 'ivoox',
+            title: 'ivoox-player',
+            icon: 'fa-headphones',
+            url: '../ivoox-player.html',
+            shortcut: 'Alt+P'
+        },
+        {
+            id: 'viacrucis',
+            title: 'Vía Crucis',
+            icon: 'fa-cross',
+            url: '../ViaCrucis/ViaCrucis-Cuaresma.html',
+            shortcut: 'Alt+V'
         }
     ]
 };
@@ -46,7 +60,7 @@ function createMenu() {
     const currentPath = window.location.pathname;
     
     // Ajustar las URLs según la ubicación actual
-    const isInSubfolder = currentPath.includes('SantoRosario') || currentPath.includes('CoronillaDivinaMisericordia');
+    const isInSubfolder = currentPath.includes('SantoRosario') || currentPath.includes('CoronillaDivinaMisericordia') || currentPath.includes('ViaCrucis');
     const urlPrefix = isInSubfolder ? '../' : '';
     
     // Actualizar las URLs del menú

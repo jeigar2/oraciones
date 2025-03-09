@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vía Crucis</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../menu.css">
+  <script src="../menu.js"></script>
+</head>
+<body>
+    <div id="evento">Traza</div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="2041px" preserveAspectRatio="none" style="width:703px;height:2041px;background:#FFFFFF;" version="1.1" viewBox="0 0 703 2041" width="703px" zoomAndPan="magnify">
+        <defs/>
+        <g>
+            <!-- Aquí puedes agregar elementos SVG si es necesario -->
+        </g>
+    </svg>
+
+    <!-- Botón para mostrar la oración inicial -->
+    <button id="btnMostrarOracionInicial">Mostrar Oración Inicial</button>
+    <button id="btnMostrarPrimeraEstacion">Mostrar Primera Estación</button>
+
+    <!-- Capa de oración inicial -->
+    <div id="oracionInicial" class="oracion">
+      <div class="content">
+        <h1>Vía Crucis</h1>
+        <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+        <p>Señor mío Jesucristo, que por amor a nosotros y para nuestra salvación, quisiste cargar sobre tus hombros la pesada cruz del pecado, te pedimos que nos des la gracia de seguirte con fidelidad y amor, para que, unidos a ti, podamos vencer el mal y alcanzar la vida eterna. Tú que vives y reinas por los siglos de los siglos. Amén.</p>
+        <h2>Oración Inicial</h2>
+        <p>Nosotros, cristianos, somos conscientes de que el vía crucis del Hijo de Dios no fue simplemente el camino hacia el lugar del suplicio. Creemos que cada paso del Condenado, cada gesto o palabra suya, así como lo que vieron e hicieron todos aquellos que tomaron parte en este drama, nos hablan continuamente. En su pasión y en su muerte, Cristo nos revela también la verdad sobre Dios y sobre el hombre.</p>
+        <p>Hoy queremos reflexionar con particular intensidad sobre el contenido de aquellos acontecimientos, para que nos hablen con renovado vigor a la mente y al corazón, y sean así origen de la gracia de una auténtica participación. Participar significa tener parte. Y ¿qué quiere decir tener parte en la cruz de Cristo? Quiere decir experimentar en el Espíritu Santo el amor que esconde tras de sí la cruz de Cristo. Quiere decir reconocer, a la luz de este amor, la propia cruz. Quiere decir cargarla sobre la propia espalda y, movidos cada vez más por este amor, caminar... Caminar a través de la vida, imitando a Aquel que «soportó la cruz sin miedo a la ignominia y está sentado a la diestra del trono de Dios» <span class="cita">(Hb 12,2)</span>.</p>
+        <p class="indicacion">Pausa de silencio</p>
+        <p><b>Oremos:</b> Señor Jesucristo, colma nuestros corazones con la luz de tu Espíritu Santo, para que, siguiéndote en tu último camino, sepamos cuál es el precio de nuestra redención y seamos dignos de participar en los frutos de tu pasión, muerte y resurrección. Tú que vives y reinas por los siglos de los siglos. Amén. <span class="autor">[San Juan Pablo II]</span></p>
+      </div>
+    </div>
+
+    <!-- Capa de estaciones del Vía Crucis -->
+    <div id="estacion" class="oracion">
+      <div class="content">
+        
+        <table>
+          <tr>
+            <!-- Este TD tendrá el texto alineado verticalmente arriba -->
+             <td valign="top">
+                <table class="textoEstacion">
+                    <tr>
+                        <h2 id="tituloEstacion"></h2>
+                        <td><h3 id="subtituloEstacion"></h3></td>
+                    </tr>
+                    <tr>
+                        <td><p id="fraseOrante"></p></td>
+                    </tr>
+                    <tr>
+                        <td><p id="respuestaPueblo"></p></td>  
+                    </tr>
+                </table>
+            </td>
+            <td rowspan="3"><img id="imagenEstacion" src="" alt="Imagen de la estación"></td>         
+          </tr>
+
+        </table>
+        <p id="cita">Cita bíblica...</p>
+        <p id="reflexion">Reflexión...</p>
+        <p id="padrenuestro">Padrenuestro...</p>
+        <p id="avemaria">Avemaría...</p>
+        <p id="gloria">Gloria...</p>
+        <p id="jaculatoria1">Jesús, pequé: Ten piedad y misericordia de mí.</p>
+        <p id="jaculatoria2">Bendita y alabada sea la pasión y muerte de nuestro Señor Jesucristo y los dolores de su santísima Madre, triste y afligida al pie de la cruz. Amén, Jesús.</p>
+        <p id="poema">Poema o canción...</p>
+      </div>
+    </div>
+
+    <script src="js/viaCrucisData.js"></script>
+    <script src="js/viaCrucis.js"></script>
+</body>
+</html>
