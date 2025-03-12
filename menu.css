@@ -108,8 +108,8 @@
     border-radius: 4px;
 } 
 
-/* Media queries para pantallas pequeñas en modo vertical */
-@media (max-width: 768px) and (orientation: portrait) {
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
     .menu-toggle {
         font-size: 36px;
         width: 48px;
@@ -145,29 +145,6 @@
     .tecla {
         font-size: 1em;
         padding: 4px 8px;
-    }
-}
-
-/* Media queries para pantallas pequeñas en modo horizontal */
-@media (max-width: 768px) and (orientation: landscape) {
-    .menu-toggle {
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .menu-link {
-        font-size: 1em;
-        padding: 10px;
-    }
-
-    .menu-link i {
-        font-size: 1.2em;
-    }
-
-    .tecla {
-        font-size: 0.9em;
-        padding: 3px 6px;
     }
 }
 
