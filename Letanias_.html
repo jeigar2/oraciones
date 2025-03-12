@@ -2,6 +2,7 @@
   <head>
     <title>Oración de las letanias lauretanas</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="menu.css">
     <script src="menu.js"></script>
@@ -111,7 +112,13 @@
         max-width: 100%;
         object-fit: contain;
       }
-
+      
+      /* Ocultar column-left en dispositivos móviles pequeños en modo vertical */
+      @media (max-width: 480px) and (orientation: portrait) {
+          .column-left {
+              display: none;
+          }
+      }
     </style>
   </head>
   <body>
