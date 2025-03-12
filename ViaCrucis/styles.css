@@ -44,13 +44,13 @@
 }
 
 .oracion .content {
-    max-width: 900px;
+    max-width: 90%;
     margin: auto;
-    font-size: larger;
+    font-size: 20px;
 }
 
 .indicacion {
-    font-size: x-large;
+    font-size: 24px;
     text-align: center;
     margin-top: 10px;
     color: crimson;
@@ -59,7 +59,7 @@
 cite,
 .cita,
 .autor {
-    font-size: large;
+    font-size: 18px;
     color:chocolate;
     font-style: italic;
 }
@@ -88,4 +88,48 @@ cite,
     #btnMostrarPrimeraEstacion {
         right: 10px; /* Ajusta la posición horizontal de los botones */
     }
+}
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .estacion {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .imagen-estacion {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .texto-estacion {
+        padding: 10px;
+    }
+
+    .oracion .content {
+        max-width: 90%;
+        margin: auto;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .estacion {
+        padding: 5px;
+        margin: 5px 0;
+    }
+
+    .texto-estacion {
+        padding: 5px;
+    }
+
+    .indicacion {
+        font: 18px;
 }
