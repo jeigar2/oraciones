@@ -73,7 +73,6 @@ button {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     max-width: 80%;
-    max-height: 80vh;
     overflow-y: auto;
     z-index: 9999;
     cursor: default;
@@ -389,7 +388,7 @@ button {
 }
 
 .oracion-inicial-texto {
-    font-size: 24px;
+    font-size: 20px;
     color: #2e7d32;  /* Verde */
     margin: 0;
 }
@@ -500,7 +499,7 @@ svg text {
 /* Media queries para pantallas pequeñas en modo vertical */
 @media (max-width: 768px) and (orientation: portrait) {
     svg text {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .contenido-misterio p,
@@ -513,7 +512,7 @@ svg text {
 /* Media queries para pantallas pequeñas en modo horizontal */
 @media (max-width: 768px) and (orientation: landscape) {
     svg text {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .contenido-misterio p,
@@ -526,7 +525,7 @@ svg text {
 /* Media queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
     svg text {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .contenido-misterio p,
@@ -627,3 +626,12 @@ svg text {
     }
   }
 */
+
+/* Ocultar imagen-container en modo apaisado */
+@media (max-width: 768px) and (orientation: landscape) {
+    .navegacion-misterios,
+    .imagen-container {
+        display: none;
+    }
+
+}

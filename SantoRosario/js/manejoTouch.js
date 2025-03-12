@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarOracionesIniciales();
     });
 
-    // Añadir event listener para el toque en la capa de oraciones iniciales
-    document.getElementById('oracionesIniciales').addEventListener('touchstart', handleTouchOraciones);
+    // Verificar existencia de oracionesIniciales antes de agregar event listener
+    const oracionesIniciales = document.getElementById('oracionesIniciales');
+    if (oracionesIniciales) {
+        oracionesIniciales.addEventListener('touchstart', handleTouchOraciones);
+    } else {
+        console.error('Elemento oracionesIniciales no encontrado en el DOM');
+    }
 });

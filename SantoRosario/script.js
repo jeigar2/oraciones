@@ -350,6 +350,9 @@ function obtenerDiaActivo() {
 
 // Función para mostrar el primer misterio si no está visible
 function mostrarPrimerMisterioSiNoVisible() {
+    if (event) {
+        event.stopPropagation();
+    }
     const primerMisterio = document.querySelector('.capa-flotante');
     if (!primerMisterio) {
         const diaActivo = obtenerDiaActivo();
