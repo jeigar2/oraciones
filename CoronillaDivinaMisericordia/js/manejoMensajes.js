@@ -14,7 +14,7 @@ function mostrarTexto(id = null, obj, respuesta = null) {
     
     var imageColumn = document.getElementById('image-column');
     var maxTop = imageColumn.clientHeight - mensaje.offsetHeight - 40;
-    mensaje.style.top = Math.min(510, maxTop) + "px";
+    mensaje.style.top = Math.min(410, maxTop) + "px";
 }
 
 // Función para mostrar HTML
