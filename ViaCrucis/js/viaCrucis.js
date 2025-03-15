@@ -94,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
         btnMostrarAnteriorEstacion.style.display = 'block';
         btnMostrarSiguienteEstacion.style.display = 'block';
     }
+
+    // Desplazar la ventana al inicio de la pantalla
+    window.scrollTo(0, 0);
   }
 
   // Añadir event listener para el teclado
