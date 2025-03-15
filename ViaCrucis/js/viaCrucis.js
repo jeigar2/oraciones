@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
     if (currentIndex < viaCrucisData.length - 1) {
       mostrarEstacion(currentIndex + 1);
-    }
+    } 
   });
-
+  
   btnMostrarAnteriorEstacion.addEventListener('click', function() {
     oracionInicial.style.display = 'none';
     const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mostrarEstacion(currentIndex - 1);
     }
   });
-
+  
   function mostrarEstacion(index) {
     const data = viaCrucisData[index];
     const total = viaCrucisData.length;
@@ -76,6 +76,11 @@ document.addEventListener('DOMContentLoaded', function() {
         verso.textContent = data.poema[i];
       }
       poema.appendChild(verso);
+      if (index === viaCrucisData.length - 1) {
+        document.getElementById('oracionfinal').textContent = oracionFinal;
+      } else {
+        document.getElementById('oracionfinal').textContent = '';
+      }
     }
     document.getElementById('poema').appendChild(poema);
 

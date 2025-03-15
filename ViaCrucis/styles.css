@@ -49,6 +49,10 @@
     font-size: 20px;
 }
 
+#oracionfinal {
+    font-size: 1.2em;
+}
+
 .indicacion {
     font-size: 24px;
     text-align: center;
@@ -132,4 +136,5 @@ cite,
 
     .indicacion {
         font: 18px;
+    }
 }
