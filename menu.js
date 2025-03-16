@@ -17,6 +17,13 @@ const menuConfig = {
             shortcut: 'Alt+R'
         },
         {
+            id: 'letanias',
+            title: 'Letanías',
+            icon: 'fa-church',
+            url: '../Letanias_.html',
+            shortcut: 'Alt+L'
+        },
+        {
             id: 'coronilla',
             title: 'Coronilla',
             icon: 'fa-cross',
@@ -24,11 +31,11 @@ const menuConfig = {
             shortcut: 'Alt+C'
         },
         {
-            id: 'letanias',
-            title: 'Letanías',
-            icon: 'fa-church',
-            url: '../Letanias_.html',
-            shortcut: 'Alt+L'
+            id: 'viacrucis',
+            title: 'Vía Crucis',
+            icon: 'fa-cross',
+            url: '../ViaCrucis/ViaCrucis-Cuaresma.html',
+            shortcut: 'Alt+V'
         },
         {
             id: 'magnificat',
@@ -43,13 +50,6 @@ const menuConfig = {
             icon: 'fa-headphones',
             url: '../ivoox-player.html',
             shortcut: 'Alt+P'
-        },
-        {
-            id: 'viacrucis',
-            title: 'Vía Crucis',
-            icon: 'fa-cross',
-            url: '../ViaCrucis/ViaCrucis-Cuaresma.html',
-            shortcut: 'Alt+V'
         }
     ]
 };
