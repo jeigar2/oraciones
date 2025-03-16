@@ -8,6 +8,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const oracionInicial = document.getElementById('oracionInicial');
   const estacion = document.getElementById('estacion');
+  const traza = document.getElementById('evento');
   const btnMostrarOracionInicial = document.getElementById('btnMostrarOracionInicial');
   const btnMostrarPrimeraEstacion = document.getElementById('btnMostrarPrimeraEstacion');
   const btnMostrarSiguienteEstacion = document.getElementById('btnMostrarSiguienteEstacion');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   btnMostrarOracionInicial.addEventListener('click', function() {
     oracionInicial.style.display = 'block';
     estacion.style.display = 'none';
+    oracionInicial.scrollTop = "0px";
   });
 
   btnMostrarPrimeraEstacion.addEventListener('click', function() {
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   function mostrarEstacion(index) {
+    estacion.scrollTop = "0px";
     const data = viaCrucisData[index];
     const total = viaCrucisData.length;
     const oraciones = oracionesComunes;
@@ -95,8 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnMostrarSiguienteEstacion.style.display = 'block';
     }
 
-    // Desplazar la ventana al inicio de la pantalla
-    window.scrollTo(0, 0);
+
   }
 
   // Añadir event listener para el teclado
@@ -128,13 +130,21 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
       if (currentIndex > 0) {
         mostrarEstacion(currentIndex - 1);
+        document.getElementById('estacion').scrollIntoView({ behavior: "instant", block: "start" });
       }
     } else if (touchX > rightBoundary) {
       // Avanzar a la siguiente estación
       const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
       if (currentIndex < viaCrucisData.length - 1) {
         mostrarEstacion(currentIndex + 1);
+        document.getElementById('estacion').scrollIntoView({ behavior: "instant", block: "start" });
       }
     }
   });
+
+  // Añadir event listener para el scroll en la capa de estaciones
+  estacion.addEventListener('scroll', function() {
+    const scrollTop = estacion.scrollTop;
+    traza.textContent = `Posición de scroll: ${scrollTop}px`;
+  });  
 });
