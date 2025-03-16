@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
       if (currentIndex > 0) {
         mostrarEstacion(currentIndex - 1);
-        document.getElementById('estacion').scrollIntoView({ behavior: "instant", block: "start" });
+        estacion.scrollTop = "0px";
       }
     } else if (touchX > rightBoundary) {
       // Avanzar a la siguiente estación
       const currentIndex = viaCrucisData.findIndex(data => data.estacion === document.getElementById('tituloEstacion').textContent);
       if (currentIndex < viaCrucisData.length - 1) {
         mostrarEstacion(currentIndex + 1);
-        document.getElementById('estacion').scrollIntoView({ behavior: "instant", block: "start" });
+        estacion.scrollTop = "0px";
       }
     }
   });
