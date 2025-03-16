@@ -15,6 +15,8 @@
     top: 20px;
     right: 300px;
     z-index: 999;
+    opacity: 0.3; /* Establece la opacidad inicial */
+    transition: opacity 0.3s ease; /* Añade una transición suave */
 }
 
 #btnMostrarPrimeraEstacion {
@@ -29,12 +31,19 @@
     display: none;
 }
 
+#btnMostrarSiguienteEstacion:hover,
+#btnMostrarAnteriorEstacion:hover,
+#btnMostrarOracionInicial:hover,
+#btnMostrarPrimeraEstacion:hover {
+    opacity: 1; /* Cambia la opacidad en el hover */
+}
+
 .oracion {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -44,9 +53,9 @@
 }
 
 .oracion .content {
-    max-width: 90%;
+    max-width: 900px;
     margin: auto;
-    font-size: 20px;
+    font-size: larger;
 }
 
 #oracionfinal {
@@ -54,7 +63,7 @@
 }
 
 .indicacion {
-    font-size: 24px;
+    font-size: x-large;
     text-align: center;
     margin-top: 10px;
     color: crimson;
@@ -63,13 +72,32 @@
 cite,
 .cita,
 .autor {
-    font-size: 18px;
+    font-size: large;
     color:chocolate;
     font-style: italic;
 }
 
 #evento{
     height: 100px;
+}
+
+/* Estilos generales */
+.estacion-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.texto-estacion {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.imagen-estacion {
+    max-width: 40%;
+    height: auto;
 }
 
 /* Media Queries para pantallas pequeñas */
@@ -92,12 +120,48 @@ cite,
     #btnMostrarPrimeraEstacion {
         right: 10px; /* Ajusta la posición horizontal de los botones */
     }
+
+    #imagenEstacion {
+        width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .estacion-container {
+        flex-direction: column; /* Apila el texto y la imagen verticalmente */
+    }
+
+    .texto-estacion {
+        padding-right: 0; /* Elimina el padding derecho en pantallas pequeñas */
+        margin-bottom: 10px; /* Añade un margen inferior para separar el texto de la imagen */
+    }
+
+    .imagen-estacion {
+        max-width: 100%; /* La imagen ocupa todo el ancho disponible */
+    }
+
+    .oracion .content {
+        max-width: 100%; /* El contenido ocupa todo el ancho disponible */
+        margin: 0; /* Elimina los márgenes */
+        padding: 10px; /* Añade un padding para que el texto no esté pegado al borde */
+        font-size: 18px;
+    }
+
+    .oracion p,
+    .oracion h1,
+    .oracion h2,
+    .oracion h3 {
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-right: 0; /* Elimina el margen derecho */
+        word-wrap: break-word; /* Permite que las palabras largas se dividan */
+    }
 }
 /* Media queries para dispositivos móviles */
 @media (max-width: 768px) {
     body {
         font-size: 16px;
     }
+
+
 
     .estacion {
         padding: 10px;
@@ -117,6 +181,7 @@ cite,
         max-width: 90%;
         margin: auto;
         font-size: 18px;
+        padding: 10px;
     }
 }
 
@@ -125,13 +190,19 @@ cite,
         font-size: 14px;
     }
 
+    .oracion .content {
+        max-width: 80%;
+        margin: auto;
+        padding: 0px;
+    }
+
     .estacion {
-        padding: 5px;
-        margin: 5px 0;
+        padding: 0px;
+        margin: auto;
     }
 
     .texto-estacion {
-        padding: 5px;
+        padding: 0px;
     }
 
     .indicacion {
