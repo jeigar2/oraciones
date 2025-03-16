@@ -146,6 +146,12 @@ li, p {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
+  opacity: 0.2; /* Establece la opacidad inicial */
+  transition: opacity 0.3s ease; /* Añade una transición suave */
+}
+
+.controls:hover{
+  opacity: 1; /* Establece la opacidad inicial */
 }
 
 .controls label {
