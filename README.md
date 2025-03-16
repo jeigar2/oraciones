@@ -1,5 +1,10 @@
 # oraciones
 
+- v2.2.5
+
+- Coronilla Divina Misericordia
+  - Versión pantallas pequeñas (móviles)
+
 - v2.2.4
 
   - Via Crucis 

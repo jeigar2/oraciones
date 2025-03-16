@@ -1,6 +1,6 @@
 // Configuración del menú
 const menuConfig = {
-    version: '2.2.4',
+    version: '2.2.5',
     items: [
         {
             id: 'home',
