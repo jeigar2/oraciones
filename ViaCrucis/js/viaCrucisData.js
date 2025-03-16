@@ -520,10 +520,10 @@ const oracionesComunes = {
   padrenuestro: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad, así en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén.",
   avemaria: "Dios te salve, María, llena eres de gracia; el Señor es contigo; bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros pecadores, ahora y en la hora de nuestra muerte. Amén.",
   gloria: "Gloria al Padre, y al Hijo, y al Espíritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.",
-  jaculatoria1: "Jesús, pequé: Ten piedad y misericordia de mí.",
+  jaculatoria1: "Pequé, Señor, pequé: Ten piedad y misericordia de mí.",
   jaculatoria2: "Bendita y alabada sea la pasión y muerte de nuestro Señor Jesucristo y los dolores de su santísima Madre, triste y afligida al pie de la cruz. Amén, Jesús.",
   fraseOrante: "V. Te adoramos, oh Cristo, y te bendecimos",
-  respuestaPueblo: "R. Pues por tu santa cruz redimiste al mundo."
+  respuestaPueblo: "R. Que por tu santa cruz redimiste al mundo."
 };
 
 const oracionFinal = 'Oremos: Señor Jesucristo, tú nos has concedido acompañarte, con María tu Madre, en los misterios de tu pasión, muerte y sepultura, para que te acompañemos también en tu resurrección; concédenos caminar contigo por los nuevos caminos del amor y de la paz que nos has enseñado. Tú que vives y reinas por los siglos de los siglos. Amén'
